@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from leglib.structural.acibars import bars
 from leglib.structural.concrete import Concrete
 from leglib.structural.acibars import a615_grade60
@@ -62,23 +63,16 @@ class DrilledShaft:
         theta = self._theta()
         return -math.cos(gamma) + (gamma - (math.pi/2.0))*math.sin(theta) + math.cos(theta)*(math.log((1 - math.tan(theta/2.0)*math.tan(gamma/2.0))/(math.tan(gamma/2.0) - math.tan(theta/2.0))))
 
-    def _Ac(self):
-        # return self.D**2*math.sqrt(self.concrete.fc)/405.0*(1.0 - math.sin(self._theta()))*self._z()
-        a = self.concrete.beta1()*self.c
+    @property
+    def a(self):
+        return self.concrete.beta1()*self.c
 
-        SLICES = 200
+    def alpha(self):
+        return math.acos((self.D - 2.0*self.a)/self.D)
 
-        self.D/2.0
+    def Ac(self):
+        pass
 
-        A = 0.0
-
-        for i in range(0, SLICES):
-            dy = a/SLICES
-            y = self.D/2.0 - dy*i
-            x1, x2 = self.intersect_circle(self.D/2.0, y)
-            A = A + dy*(x2 - x1)
-
-        return A
 
     def _Qc(self):
         h = self.D

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import unittest
 from leglib.util import almost_equal
 from .drilledshaft import DrilledShaft
@@ -35,6 +36,28 @@ class TestDrilledShaft(unittest.TestCase):
         # assert(almost_equal(test_shaft._cc(), 4.363, places=3))
         # assert(almost_equal(test_shaft._Ic(), 899.369, places=0))
 
+class TestCircularColumn(unittest.TestCase):
+    "Test case based upon 2008 CRSI Handbook manual example on p. 4-5"
+
+    def setUp(self):
+        self.test_shaft = DrilledShaft(D=20.0)
+        self.test_shaft.n = 6
+        self.test_shaft.bar = bars["#9"]
+        self.test_shaft.cover = 1.5
+        self.test_shaft.tiebar = bars["#3"]
+        self.test_shaft.concrete.fc = 6000.0
+        self.test_shaft.c = 20.51791
+
+    def test_manual_calcs(self):
+        self.assertAlmostEqual(self.test_shaft.concrete.beta1(), 0.75, places=2)
+
+        self.assertAlmostEqual(self.test_shaft.steel.E, 29000000.0, places=0)
+
+        self.assertAlmostEqual(self.test_shaft.concrete.ec, 0.003, places=3)
+
+        self.assertAlmostEqual(self.test_shaft.a, 2.13985, places=4)
+
 
 if __name__ == '__main__':
     unittest.main()
+
