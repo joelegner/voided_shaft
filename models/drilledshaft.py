@@ -23,7 +23,15 @@ class DrilledShaft:
         self.c = 1.0
 
     def __str__(self):
-        return "%d inch diameter drilled shaft" % self.d
+        return "%d inch diameter drilled shaft" % self.D
+
+    def intersect_circle(self, r, y):
+        "Returns 0, 1, or 2 points crossed by horizontal line at y"
+        if r*r - y*y < 0:
+            x = 0.0
+        else:
+            x = math.sqrt(r*r - y*y)
+        return (-x, x)
 
     def bar_circle_radius(self):
         "Returns radius of bar circle in inches"
@@ -55,7 +63,22 @@ class DrilledShaft:
         return -math.cos(gamma) + (gamma - (math.pi/2.0))*math.sin(theta) + math.cos(theta)*(math.log((1 - math.tan(theta/2.0)*math.tan(gamma/2.0))/(math.tan(gamma/2.0) - math.tan(theta/2.0))))
 
     def _Ac(self):
-        return self.D**2*math.sqrt(self.concrete.fc)/405.0*(1.0 - math.sin(self._theta()))*self._z()
+        # return self.D**2*math.sqrt(self.concrete.fc)/405.0*(1.0 - math.sin(self._theta()))*self._z()
+        a = self.concrete.beta1()*self.c
+
+        SLICES = 200
+
+        self.D/2.0
+
+        A = 0.0
+
+        for i in range(0, SLICES):
+            dy = a/SLICES
+            y = self.D/2.0 - dy*i
+            x1, x2 = self.intersect_circle(self.D/2.0, y)
+            A = A + dy*(x2 - x1)
+
+        return A
 
     def _Qc(self):
         h = self.D
@@ -76,7 +99,6 @@ class DrilledShaft:
         z = self._z()
         return h**4*math.sqrt(fc)/1621.0*(1.0 - math.sin(theta))*((math.cos(gamma)**3/3.0) + math.sin(theta)*(math.pi/4.0 - gamma/2.0 - math.sin(2.0*gamma)/4.0 + z*math.sin(theta)))
 
-
     @property
     def Ag(self):
         "Returns gross area in square inches"
@@ -91,7 +113,6 @@ class DrilledShaft:
         "Return Pn(max) in pounds, assuming it is a tied column"
         phi = 0.65  # Tied column
         return phi*0.80*(0.85*self.concrete.fc*(self.Ag - self.Ast) + self.steel.fy*self.Ast)
-    
 
     def analyze(self):
         # a = depth of compression block
@@ -121,40 +142,17 @@ class DrilledShaft:
                 if epsilon_s > 0.0:
                     # Bar is in tension
                     fs = min(epsilon_s*self.steel.E, self.steel.fy)
-                    print("Bar at (%.2f, %.2f) has strain = %.4f and stress fy = %.0f" % (bar_loc[0], bar_loc[1], epsilon_s, fs))
+                    print("Bar at (%.2f, %.2f) has strain = %.4f and stress fy = %.0f" % (
+                        bar_loc[0], bar_loc[1], epsilon_s, fs))
                     T = T + self.bar.Ab*fs
                     M = M + T*(d - c)
                 else:
                     # Bar is in compression
                     fs = max(-epsilon_s*self.steel.E, self.steel.fy)
-                    print("Bar at (%.2f, %.2f) has strain = %.4f and stress fy = %.0f" % (bar_loc[0], bar_loc[1], epsilon_s, fs))
+                    print("Bar at (%.2f, %.2f) has strain = %.4f and stress fy = %.0f" % (
+                        bar_loc[0], bar_loc[1], epsilon_s, fs))
                     C = C + self.bar.Ab*fs
                     M = M + C*(d - c)
                 P = P + C - T
 
             c = c + CINC
-
-if __name__ == "__main__":
-    from leglib.util import almost_equal
-    test_shaft = DrilledShaft(D = 16.0)
-    test_shaft.n = 8
-    test_shaft.bar = bars["#9"]
-    test_shaft.cover = 2.5 - test_shaft.bar.db/2.0
-
-    # Test against results in article:
-    # Tayem, A. and Najmi, A., "Design of Round Reinforced-Concrete Columns", Journal of Structural Engineering, September 1996
-
-    
-    assert(almost_equal(test_shaft.Ag, 201.061929829746767, places=4))
-
-    test_shaft.c = 6.0
-
-    assert(almost_equal(test_shaft.concrete.beta1(), 0.85, places=2))
-    assert(almost_equal(test_shaft._theta(), 0.253, places=3))
-    assert(almost_equal(test_shaft._gamma(), 0.371, places=3))
-    assert(almost_equal(test_shaft._z(), 1.459, places=3))
-    assert(almost_equal(test_shaft._Ac(), 43.743, places=3))
-    assert(almost_equal(test_shaft._Qc(), 190.867, places=3))
-    assert(almost_equal(test_shaft._cc(), 4.363, places=3))
-    assert(almost_equal(test_shaft._Ic(), 899.369, places=0))
-
