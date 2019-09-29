@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 import math
-
-
-class Donut:
-    def __init__(self, r1, r2):
-        self.r1 = max(r1, r2)
-        self.r2 = min(r1, r2)
+from leglib.shapes import Donut
 
 
 def intersect_circle(r, y):
@@ -52,4 +47,3 @@ if __name__ == "__main__":
     print(err(A, real_A))
     real_I = math.pi/4.0*(h/2.0)**4 - math.pi/4.0*(h0/2.0)**4
     print("I = ", I, real_I, 100*(I - real_I)/real_I)
-
