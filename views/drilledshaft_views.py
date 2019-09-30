@@ -27,3 +27,17 @@ def plot_rebar(plt, shaft):
         bar_circle = plt.Circle(
             (loc[0], loc[1]), radius=shaft.bar.db/2, fill=True, color='black')
         plt.gca().add_patch(bar_circle)
+
+
+def plot_interaction_diagram(shaft, filename="interaction.png"):
+    NUM_POINTS = 20
+
+    moments = []
+    axials = []
+
+    for i in range(0, NUM_POINTS + 1):
+        shaft.c = shaft.D/NUM_POINTS*i
+        axials.append(shaft.Pn())
+
+    plt.plot(axials, moments)
+    plt.savefig(os.path.join("output", filename))

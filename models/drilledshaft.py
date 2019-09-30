@@ -50,6 +50,18 @@ class DrilledShaft:
 
         return tuple(locations)
 
+    def _dsi(self):
+        "Returns bar locations list"
+        return [self.D/2.0 - y for x, y in self.bar_locations()]
+
+    def _esi(self):
+        "Returns bar strains list"
+        return [self.concrete.ec*(1.0 - dsi/self.c) for dsi in self._dsi()]
+
+    def _fsi(self):
+        "Returns bar stress list"
+        return [min(self.steel.fy, self.steel.E*esi) for esi in self._esi()]
+
     def _theta(self):
         "Return value of theta in radians"
         return math.asin((self.D - 2.0*self.c)/self.D)
@@ -71,8 +83,73 @@ class DrilledShaft:
         return math.acos((self.D - 2.0*self.a)/self.D)
 
     def Ac(self):
-        pass
+        h = self.D
+        alpha = self.alpha()
+        return h**2*(2.0*alpha - math.sin(2*alpha))/8.0
 
+    def ybar(self):
+        "Returns distance of concrete centroid from column centroid at y=c"
+        h = self.D
+        alpha = self.alpha()
+        return (2.0*h**3)*math.sin(alpha)**3/(24.0*self.Ac())
+
+    def Cc(self):
+        "Returns compression resultant in pounds"
+        # Based upon CRSI handbook 2008, page 4-7
+        return 0.85*self.concrete.fc*self.Ac()
+
+    def Mc(self):
+        "Returns moment caused by compression zone only in lb-in"
+        return self.Cc()*self.ybar()
+
+    def _Fsi(self):
+        "Returns a list of bar forces in pounds"
+        Fsi = []
+        fsis = self._fsi()
+        locs = self.bar_locations()
+        for i in range(0, self.n):
+            fsi = fsis[i]
+            y = locs[i][1]
+            if (self.D/2.0 - y) < self.a:
+                # Reduce contribution of bar by the amount of concrete displaced
+                Fsi.append((fsi - 0.85*self.concrete.fc)*self.bar.Ab)
+            else:
+                Fsi.append(fsi*self.bar.Ab)
+        return Fsi
+
+    def _Pns(self):
+        "Returns axial force caused by the steel in pounds"
+        return sum(self._Fsi())
+
+    def _Pnc(self):
+        "Returns axial force caused by the concrete compression in pounds"
+        return self.Cc()
+
+    def _Msi(self):
+        dsis = self._dsi()
+        Fsis = self._Fsi()
+        assert(len(dsis) == len(Fsis))
+        assert(len(dsis) == self.n)
+        Msi = []
+        for i in range(0, len(dsis)):
+            dsi = dsis[i]
+            Fsi = Fsis[i]
+            Msi.append(Fsi*(self.D/2.0 - dsi))
+        return Msi
+
+    def Mn(self):
+        return sum(self._Msi()) + self.Mc()
+
+    def Pn(self):
+        "Returns nominal axial capacity in pounds"
+        return self._Pns() + self._Pnc()
+
+    def phi(self):
+        return 0.65
+
+    def phiPn(self):
+        "Returns axial capacity in pounds"
+        return self.phi()*self.Pn()
 
     def _Qc(self):
         h = self.D
