@@ -60,7 +60,7 @@ class DrilledShaft:
 
     def _fsi(self):
         "Returns bar stress list"
-        return [min(self.steel.fy, self.steel.E*esi) for esi in self._esi()]
+        return [max(-self.steel.fy, min(self.steel.fy, self.steel.E*esi)) for esi in self._esi()]
 
     def _theta(self):
         "Return value of theta in radians"
@@ -140,16 +140,23 @@ class DrilledShaft:
     def Mn(self):
         return sum(self._Msi()) + self.Mc()
 
+    def phiMn(self):
+        return self.phi()*self.Mn()
+
     def Pn(self):
         "Returns nominal axial capacity in pounds"
         return self._Pns() + self._Pnc()
 
     def phi(self):
-        return 0.65
+        # maximum steel strain (compare magnitude only)
+        es_max = math.fabs(min(self._esi()))
+        es_comp = self.steel.fy/self.steel.E
+        phi = 0.65 + (0.90 - 0.65)/(0.005 - es_comp)*(es_max - es_comp)
+        return min(0.90, max(0.65, phi))
 
     def phiPn(self):
         "Returns axial capacity in pounds"
-        return self.phi()*self.Pn()
+        return min(self.phi()*self.Pn(), self.phiPnmax())
 
     def _Qc(self):
         h = self.D
@@ -184,46 +191,3 @@ class DrilledShaft:
         "Return Pn(max) in pounds, assuming it is a tied column"
         phi = 0.65  # Tied column
         return phi*0.80*(0.85*self.concrete.fc*(self.Ag - self.Ast) + self.steel.fy*self.Ast)
-
-    def analyze(self):
-        # a = depth of compression block
-        # c = depth to neutral axis
-        # d = depth to centerline of steel
-
-        print("Analyzing drilled shaft")
-
-        CINC = 0.25
-        c = 0.125
-        # while c <= self.D:
-        while c <= 12.0:
-            T = 0.0
-            C = 0.0
-            M = 0.0
-            P = 0.0
-
-            print(c)
-            for bar_loc in self.bar_locations():
-                # Depth to this bar in inches
-                d = self.D/2 - bar_loc[1]
-
-                # Bar strain
-                epsilon_s = (d - c)*epsilon_c/c
-
-                # Bar yield
-                if epsilon_s > 0.0:
-                    # Bar is in tension
-                    fs = min(epsilon_s*self.steel.E, self.steel.fy)
-                    print("Bar at (%.2f, %.2f) has strain = %.4f and stress fy = %.0f" % (
-                        bar_loc[0], bar_loc[1], epsilon_s, fs))
-                    T = T + self.bar.Ab*fs
-                    M = M + T*(d - c)
-                else:
-                    # Bar is in compression
-                    fs = max(-epsilon_s*self.steel.E, self.steel.fy)
-                    print("Bar at (%.2f, %.2f) has strain = %.4f and stress fy = %.0f" % (
-                        bar_loc[0], bar_loc[1], epsilon_s, fs))
-                    C = C + self.bar.Ab*fs
-                    M = M + C*(d - c)
-                P = P + C - T
-
-            c = c + CINC

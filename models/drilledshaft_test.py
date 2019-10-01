@@ -130,6 +130,41 @@ class TestCircularColumn(unittest.TestCase):
 
         self.assertAlmostEqual(self.test_shaft.Mn()/1000.0, 2531.125, places=1)
 
+    def test_et_005_strain(self):
+        self.test_shaft.c = 6.20551    # Given in CRSI
+        self.assertAlmostEqual(self.test_shaft.D, 20.0, places=3)
+        self.assertAlmostEqual(self.test_shaft.phi(), 0.90, places=2)
+
+        self.assertAlmostEqual(
+            self.test_shaft.concrete.beta1(), 0.75, places=2)
+
+        self.assertAlmostEqual(self.test_shaft.steel.E, 29000000.0, places=0)
+
+        self.assertAlmostEqual(self.test_shaft.concrete.ec, 0.003, places=3)
+
+        self.assertAlmostEqual(self.test_shaft.c, 6.20551, places=4)
+
+        self.assertAlmostEqual(self.test_shaft.a, 4.65413, places=4)
+
+        self.assertAlmostEqual(self.test_shaft.Ac(), 55.49907, places=2)
+
+        self.assertAlmostEqual(self.test_shaft.ybar(), 7.25050, places=3)
+
+        self.assertAlmostEqual(self.test_shaft.concrete.fc, 6000.0, places=-2)
+
+        self.assertAlmostEqual(self.test_shaft.Cc()/1000.0, 283.045, places=0)
+
+        self.assertAlmostEqual(self.test_shaft.Mc()/1000.0, 2052.220, places=0)
+
+        self.assertAlmostEqual(self.test_shaft._Pns() /
+                               1000.0, -159.388, places=0)
+
+        self.assertAlmostEqual(self.test_shaft._Pnc() /
+                               1000.0, 283.045, places=0)
+
+        self.assertAlmostEqual(self.test_shaft.Pn()/1000.0, 123.657, places=0)
+        self.assertAlmostEqual(self.test_shaft.phiPn()/1000.0, 111.0, places=0)
+
 
 if __name__ == '__main__':
     unittest.main()

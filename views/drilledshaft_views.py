@@ -4,6 +4,8 @@ import os
 
 
 def plot_drilled_shaft(shaft, filename="drilledshaft.png"):
+    plt.clf()
+
     circle = plt.Circle((0.0, 0.0), shaft.D/2,
                         fill=False, edgecolor='darkgrey')
     ax = plt.gca()
