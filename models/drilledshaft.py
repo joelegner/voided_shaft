@@ -158,24 +158,8 @@ class DrilledShaft:
         "Returns axial capacity in pounds"
         return min(self.phi()*self.Pn(), self.phiPnmax())
 
-    def _Qc(self):
-        h = self.D
-        fc = self.concrete.fc
-        theta = self._theta()
-        gamma = self._gamma()
-        z = self._z()
-        return h**3*math.sqrt(fc)/810.0*(1.0 - math.sin(theta))*(math.pi/4.0 - gamma/2.0 - math.sin(2*gamma)/4.0 + z*math.sin(theta))
-
     def _cc(self):
         return self._Qc()/self._Ac()
-
-    def _Ic(self):
-        h = self.D
-        fc = self.concrete.fc
-        theta = self._theta()
-        gamma = self._gamma()
-        z = self._z()
-        return h**4*math.sqrt(fc)/1621.0*(1.0 - math.sin(theta))*((math.cos(gamma)**3/3.0) + math.sin(theta)*(math.pi/4.0 - gamma/2.0 - math.sin(2.0*gamma)/4.0 + z*math.sin(theta)))
 
     @property
     def Ag(self):
