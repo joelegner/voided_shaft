@@ -29,13 +29,13 @@ class TestVoidedShaft(unittest.TestCase):
     "Test case based upon 2008 CRSI Handbook manual example on p. 4-5"
 
     def setUp(self):
-        self.test_shaft = VoidedShaft(D=20.0)
+        self.test_shaft = VoidedShaft(D=20.0, Di=8.0)
         self.test_shaft.n = 6
         self.test_shaft.bar = bars["#9"]
         self.test_shaft.cover = 1.5
         self.test_shaft.tiebar = bars["#3"]
         self.test_shaft.concrete.fc = 6000.0
-        self.test_shaft.c = 20.51791
+        self.test_shaft.c = 10.0/0.75
 
     def test_manual_calcs(self):
         self.assertAlmostEqual(self.test_shaft.D, 20.0, places=3)
@@ -47,15 +47,21 @@ class TestVoidedShaft(unittest.TestCase):
 
         self.assertAlmostEqual(self.test_shaft.concrete.ec, 0.003, places=3)
 
-        self.assertAlmostEqual(self.test_shaft.c, 20.51791, places=4)
+        self.assertAlmostEqual(self.test_shaft.c, 10.0/0.75, places=4)
 
-        self.assertAlmostEqual(self.test_shaft.alpha(), 2.13985, places=4)
+        # self.assertAlmostEqual(self.test_shaft.alpha(), 2.13985, places=4)
 
-        self.assertAlmostEqual(self.test_shaft.a, 15.38843, places=4)
+        self.assertAlmostEqual(self.test_shaft.a, 10.0, places=4)
 
-#         self.assertAlmostEqual(self.test_shaft.Ac(), 259.37708, places=2)
+        R = self.test_shaft.D/2.0
+        Ri = self.test_shaft.Di/2.0
+        self.assertAlmostEqual(self.test_shaft.Ac(),
+                               math.pi*(R**2 - Ri**2)/2.0, places=4)
 
-#         self.assertAlmostEqual(self.test_shaft.ybar(), 1.53656, places=3)
+        b = (R + Ri)/2.0
+        t = R + Ri
+        # self.assertAlmostEqual(self.test_shaft.ybar(),
+        #                        2.0*b/math.pi*(1.0 + ((t/b)**2)/12.0), places=3)
 
 #         self.assertAlmostEqual(self.test_shaft.concrete.fc, 6000.0, places=-2)
 
