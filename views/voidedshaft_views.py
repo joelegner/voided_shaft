@@ -6,12 +6,13 @@ import os
 def plot_voided_shaft(shaft, filename="voidedshaft.png"):
     plt.clf()
 
-    circle = plt.Circle((0.0, 0.0), shaft.D/2,
-                        fill=False, edgecolor='darkgrey')
-    circle = plt.Circle((0.0, 0.0), shaft.Di/2,
-                        fill=False, edgecolor='darkgrey')
+    circle_0 = plt.Circle((0.0, 0.0), shaft.D/2.0,
+                          fill=False, edgecolor='darkgrey')
+    circle_i = plt.Circle((0.0, 0.0), shaft.Di/2.0,
+                          fill=False, edgecolor='darkgrey')
     ax = plt.gca()
-    ax.add_patch(circle)
+    ax.add_patch(circle_0)
+    ax.add_patch(circle_i)
     plot_rebar(plt, shaft)
     plt.axis('scaled')
     plt.savefig(os.path.join("output", filename))

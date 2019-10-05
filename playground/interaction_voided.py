@@ -32,7 +32,7 @@ def plot_interaction(shaft):
         phiMn = shaft.phiMn()/1000.0
         phiPn = shaft.phiPn()/1000.0
 
-        print("c = {}, phiMn = {}, phiPn = {}".format(shaft.c, phiMn, phiPn))
+        # print("c = {}, phiMn = {}, phiPn = {}".format(shaft.c, phiMn, phiPn))
 
         xs.append(phiMn)
         ys.append(phiPn)
@@ -61,6 +61,10 @@ if __name__ == "__main__":
     test_shaft.concrete.fc = 6000.0
     test_shaft.c = 20.51791
 
+    # Draw a cross-section
+    cross_section_filename = "voided-test-shaft.png"
+    plot_voided_shaft(test_shaft, cross_section_filename)
+
     # Plot results with void first
     plt.clf()
     phiMn_max, phiPn_max = plot_interaction(test_shaft)
@@ -68,7 +72,9 @@ if __name__ == "__main__":
     # Re-run same shaft without void and plot over top of same diagram
     test_shaft.Di = 0.0
     phiMn_max, phiPn_max = plot_interaction(test_shaft)
+
+    # Add titles and save
     plt.title("Voided Shaft\nand 2008 CRSI Example on p. 4-7")
     plt.savefig(os.path.join("output", "interaction-voided.png"))
 
-    print("Maximum phiMn = {} and maximum phiPn = {}".format(phiMn_max, phiPn_max))
+    # print("Maximum phiMn = {} and maximum phiPn = {}".format(phiMn_max, phiPn_max))
