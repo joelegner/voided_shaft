@@ -12,8 +12,6 @@ The report deliverable is a word document called `report.docx` which is generate
 
 1. Source file uses [Pandoc's flavor of Markdown syntax](https://pandoc.org/MANUAL.html#pandocs-markdown).
 
-1. 
-
 1. Inline math goes in single dollar signs `$ ... $` while display math goes in double dollar signs `$$ ... $$`.
 
 1. Bibliography entries are put in using `@name` where `name` is contained in the `report.bibtex` file.
@@ -28,4 +26,3 @@ $ make
 ```
 
 The resulting file `report.docx` will be located in the `output` directory.
-
