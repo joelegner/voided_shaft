@@ -26,6 +26,12 @@ class DrilledShaft:
     def __str__(self):
         return "%d inch diameter drilled shaft" % self.D
 
+    def set_bar_size(self, name="#10"):
+        self.bar = bars[name]
+
+    def set_tiebar_size(self, name="#4"):
+        self.tiebar = bars[name]
+
     def intersect_circle(self, r, y):
         "Returns 0, 1, or 2 points crossed by horizontal line at y"
         if r*r - y*y < 0:
