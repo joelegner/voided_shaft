@@ -25,7 +25,7 @@ if __name__ == "__main__":
     phiMn_max, phiPn_max = plot_interaction_diagram(shaft)
 
     # Add point from run
-    plt.scatter(133592.33, 30.0)
+    plt.scatter((5196.0*12.0), 30.0, label="S&L Design")
 
     # Add titles and save
     plt.title("P-M Diagram for S&L Shaft")
