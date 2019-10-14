@@ -1,5 +1,5 @@
+"Calculations for USF self-directed study, fall 2019 by Joe Legner, P. E."
 #!/usr/bin/env python3
-import math
 import os
 
 from matplotlib import pyplot as plt
@@ -17,7 +17,8 @@ if __name__ == "__main__":
     shaft.set_bar_size("#11")
     shaft.set_tiebar_size("#4")
 
-    plot_voided_shaft(shaft, filename="sargent-lundy-shaft.png")
+    plot_voided_shaft(shaft)
+    plt.savefig(os.path.join("output", "sargent-lundy-shaft.png"))
 
     plt.clf()
     phiMn_max, phiPn_max = plot_interaction_diagram(shaft)
@@ -32,4 +33,5 @@ if __name__ == "__main__":
     plt.savefig(os.path.join("output", "interaction-sargent-lundy.png.png"))
 
     plt.clf()
-    plot_voided_shaft(shaft, filename="sargent-lundy-shaft-voided.png")
+    plot_voided_shaft(shaft)
+    plt.savefig(os.path.join("output", "sargent-lundy-shaft-voided.png"))

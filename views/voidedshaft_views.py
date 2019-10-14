@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import os
 
 
-def plot_voided_shaft(shaft, filename="voidedshaft.png"):
+def plot_voided_shaft(shaft):
     plt.clf()
 
     circle_0 = plt.Circle((0.0, 0.0), shaft.D/2.0,
@@ -15,7 +15,6 @@ def plot_voided_shaft(shaft, filename="voidedshaft.png"):
     ax.add_patch(circle_i)
     plot_rebar(plt, shaft)
     plt.axis('scaled')
-    plt.savefig(os.path.join("output", filename))
 
 
 def plot_rebar(plt, shaft):
@@ -55,13 +54,15 @@ def plot_interaction_diagram(shaft):
         phiMn = shaft.phiMn()/1000.0
         phiPn = shaft.phiPn()/1000.0
 
-        xs.append(phiMn)
+        xs.append(phiMn/12.0)   # Convert to kip-ft
         ys.append(phiPn)
         phiPn_max = max(phiPn_max, phiPn)
         phiMn_max = max(phiMn_max, phiMn)
 
         shaft.c = shaft.c - shaft.D/SEGMENTS
 
+    plt.xlabel("Moment, kip-ft")
+    plt.ylabel("Axial Load, kips")
     plt.plot(xs, ys)
 
     return (phiMn_max, phiPn_max)
