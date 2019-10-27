@@ -12,6 +12,11 @@
         "python.pythonPath": "/Users/joelegner/.local/share/virtualenvs/voided_shaft-rLIRrrxW/bin/python",
         "python.autoComplete.extraPaths": [
             "/Users/joelegner/Development/Projects/"
-        ]
+        ],
+        "[markdown]": {
+            "editor.wordWrap": "wordWrapColumn",
+            "editor.quickSuggestions": false
+        },
+        "editor.wordWrapColumn": 80
     }
 }

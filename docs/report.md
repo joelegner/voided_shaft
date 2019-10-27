@@ -1,5 +1,5 @@
 % Voided Shafts for Transmission Structure Foundations -- Feasibility Study
-% Joe Legner, P. E., S. E.
+% Joe Legner, P.E., S.E.
 % October 26, 2019
 
 # Introduction
@@ -12,13 +12,23 @@ Drilled shafts are deep foundations constructed by drilling a circular hole with
 
 ## Transmission Line Structure Foundations
 
-Drilled shafts for transmission line structures typically range between about 2.5 feet and 10 feet in diameter (IEEE 2001). Even larger diameters have been constructed. The diameter of a shaft may be dictated by the anchor bolt circle diameter and required edge distance rather than by geotechnical concerns. At the larger end of the range, DEF is a real concern.
+Drilled shafts for transmission line structures typically range between about 2.5 feet and 10 feet in diameter (IEEE 2001). Even larger diameters have been constructed. The diameter of a shaft may be dictated by the anchor bolt circle diameter and required edge distance rather than by geotechnical concerns. At the larger end of the range, DEF is a real concern. Loads from wind and wires tend to be overturning and shear forces with small axial components than bridge shafts.
 
 Applications in the power industry / typical loads and shaft diameters presently and where voided shafts could be used.
 
+## Mitigation Techniques
+
+The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections and employing mix designs that develop lower heat of hydration.
+
 # Background
 
-Mitigating the concern with elan concrete and other low heat of hydration techniques is problematic, because the delayed curing also extends the length of the project. It would be better to find a way to construct large drilled shafts using conventional concrete or even high early strength mixes without DEF.
+## Previous Work on Voided Shafts
+
+Mitigating the concern with low heat of hydration techniques is problematic, because the delayed curing also extends the length of the project, delaying completion and increasing project carrying costs. It would be better to find a way to construct large drilled shafts using conventional concrete or even high early strength mixes without DEF.
+
+Johnson and Mullins (2007) devised a mitigation concept which is to cast a continuous void through the centerline of the pier. This reduces the overall quantity of heat-generating concrete and provides a second surface through which to dissipate heat from the shaft into the environment. Their 3D numerical modeling shows voiding shafts is capable of keeping temperatures below the threshold for DEF concern. Their preliminary structural analysis shows that moment capacity would not be reduced significantly. Although axial capacity would be significantly reduced, this is not generally a concern for transmission line foundations. Additionally Johnson and Mullins show that a cost savings might be had by using the technique -- an added benefit.
+
+To further investigate the voided shaft idea, the Florida Department of Transportation (FDOT) sponsored a demonstration shaft, 9 feet in diameter with a 4-foot diameter central void (Mullins, Johnson, and Winters 2018). It used an FDOT Class IV concrete mixture ($f'_c = 4000\text{ psi}$) reinforced with 36 #9 bars and #5 stirrups. The demonstration project validated the constructibility of the concept.
 
 Background of the voided shaft concept and past demonstration project.
 
@@ -28,4 +38,12 @@ Methods of verification, testing. Things that a test may test: soil behavior, st
 
 Maybe a cost comparison: I recently got a quote for a cooling system for 7ft diameter, 25ft long shaft at \$25k. So, savings can be not only concrete removed vs. the cost of a permanent central casing.
 
-References
+# Structural Design
+
+# Cost Comparison
+
+# References
+
+Johnson, K. M., and Mullins, G., "Concrete Temperature Control via Voiding Drilled Shafts," _Contemporary Issues in Deep Foundations_, ASCE Geo Institute, GSP, V. I, No. 158, 2007, pp. 1-12.
+
+Mullins, G., Johnson, Kevin R., and Winters, D., "Controlling Mass Concrete Effects in Large-Diameter Drilled Shafts Using Full-Length Central Void," _ACI Structural Journal_, American Concrete Institute, V. 115, No. 5, September 2018, pp. 1-10.
