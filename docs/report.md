@@ -40,10 +40,106 @@ Maybe a cost comparison: I recently got a quote for a cooling system for 7ft dia
 
 # Structural Design
 
+## Confinement Considerations
+
+Structural design of transmission line foundation piers requires consideration of (1) flexure, (2) axial load, and (3) shear and torsion. Because of the nature of transmission line structure loads, axial and shear loads are small relative to bridge foundations, for example. Flexure is the primary loading that needs to be resisted.
+
+Confinement increase the strength of concrete and maximizes the strength contribution of longitudinal steel reinforcing bars to the strength of the foundation by preventing the steel from buckling out the side of the shaft. The ACI code allows the use of either spiral reinforcement or circular ties for confinements. Solid circular drilled shafts are confined using ties. But hollow cylindrical column confinement is not as straightforward. The outer face of the column is confined with ordinary ties. However, it is also possible for the inside face of a hollow section to fail. To prevent such a failure, a variety of approaches have been considered in the literature:
+
+1. Provide a single mat of bars near the outside face and do not confine the inside face of the section.
+
+2. Provide a second mat of bars, including ties, on the inside face. Cross-ties are provided to connect the two mats (Liang et. al. 2015).
+
+3. Confine the inside face using a hollow steel section (Liang et. al. 2015).
+
+Liang, Beck, and Sritharan (2015) investigated single- and double-mats for the California Department of Transportation (CalTrans) and found that double mats are the most effective. However, this was for bridges which have a significant axial load and shear loads in earthquake-prone regions like California. For reptitive transmission structures without significant axial or shear load, the added expense of the second mat and cross-ties should be avoided if possible.
+
+Test results show that the single mat of bars near the outside face is liable to fail by buckling of the axial bars toward the inner void.
+
+Double mats are effective at preventing the axial bars from buckling inward.
+
+The construction method employed in the Johnson and Mullins test shaft employed an inner permanent casing. Such a casing could prevent the axial bars from buckling inward, thereby increasing the potential axial and flexural capacity of the voided shaft. Inner steel tube confines axial bars (Han 2010).
+
+![FDOT Demonstration Shaft](./images/demo-shaft-voided.png){ width=4in }
+
+![FDOT Demonstration Shaft vithout Void](./images/demo-shaft-unvoided.png){ width=4in }
+
+![FDOT Demonstration Shaft P-M Diagram](./images/demo-shaft-interaction.png){ width=5in }
+
+## Code Analysis
+
+There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. We will adopt the ACI 318-14 code for this report.
+
+Assumptions:
+
+1. Specified compressive strength of concrete $$ 3000\text{ psi} \leq f'\_c \leq 4000 \text{ psi} $$. $$\beta_1 = 0.85 $$
+
+1. Concrete is normal weight.
+
+1. ASTM A615, grade 60 deformed bars for ties and axial reinforcement: $$ f_y = 60000\text{ psi} $$.
+
+1. The inner tube behaves as a composite member.
+
+Minimum steel is required for the column. Because the proportions of a drilled shaft are governed by either the geotechnical soil requirements or anchor bolt circle minimum edge distance requirements, ACI 318 Section 10.3.1.2 allows us to use one-half the gross cross-sectional area for minimum steel calculations. Therefore minimum steel is:
+
+$$ A_{s,min} = 0.005 A_g = \dfrac{ \pi (D^2 - D_i^2) }{4} $$
+
+The required inner tube thickness is controlled by ACI Section 10.3.1.6.
+
+$$ t_{min} = D \sqrt{\dfrac{fy}{8E_s}} $$
+
+Design equations per ACI Section 10.5.1.1:
+
+$$ \phi P_n \geq P_u $$
+
+$$ \phi M_n \geq M_u $$
+
+$$ \phi V_n \geq V_u $$
+
+$$ \phi T_n \geq T_u $$
+
+$P_n$ and $M_n$ are calculated in accorance with ACI 318 Section 21.2.
+
+ACI 318 Commentary Section R10.5.2.2 refers the reader to the AISC Steel Construction Manual (2010) for composite sections.
+
+AISC Chapter I controls the design of composite construction.
+
+AISC Section A2 refers to ACI 318-08, not ACI 318-14.
+
+Excludes ACI 318-08 Section 7.8.2
+
+Excludes ACI 318-08 Section 10.13
+
+Excludes ACI 318-08 Chapter 21
+
+AISC Section I1.2 says that local buckling of encased members need not be checked. However, this seems to be in reference to open sections such as wide flange shapes, where every element is encased in concrete. For encased tubular members like the subject foundation, it seems appropriate that buckling would indeed be considered.
+
+AISC Section I1.2 sets failure at $\epsilon = 0.003$ strain.
+
+AISC Section I1.3(1) requires that $3000 \leq f'_c\leq10000$ psi for normal weight concrete.
+
+AISC Section I1.3(2) limits reinforcing steel $f_y \leq 75000$ psi.
+
+For encased steel members, AISC Section I2.1a adds these restrictions:
+
+1. The steel cross-section shall be at least 1% of the total composite cross section. We will conservatively assume that the void should not be exluded from the composite cross section when calculating the area.
+
 # Cost Comparison
 
 # References
 
-Johnson, K. M., and Mullins, G., "Concrete Temperature Control via Voiding Drilled Shafts," _Contemporary Issues in Deep Foundations_, ASCE Geo Institute, GSP, V. I, No. 158, 2007, pp. 1-12.
+American Concrete Institute, _Building Code Requirements for Structural Concrete_, ACI 318-14, 2014.
 
-Mullins, G., Johnson, Kevin R., and Winters, D., "Controlling Mass Concrete Effects in Large-Diameter Drilled Shafts Using Full-Length Central Void," _ACI Structural Journal_, American Concrete Institute, V. 115, No. 5, September 2018, pp. 1-10.
+American Institute of Steel Construction, _Specification for Structural Steel Buildings_, AISC 360-10, June 22, 2010.
+
+Han, T. H., Yoon, K. Y., & Kang, Y. J., "Compressive strength of circular hollow reinforced concrete confined by an internal steel tube," Construction and Building Materials, V. 24, No. 9, 2010, pp. 1690–1699.
+
+Jensen, Uffe G ; Hoang, Linh Cao, "Shear Strength of Reinforced Concrete Piers and Piles with Hollow Circular Cross Section", Structural Engineering International, V. 20, No. 3. 2010, pp. 260-267.
+
+Johnson, K. M. and Mullins, G., "Concrete Temperature Control via Voiding Drilled Shafts," _Contemporary Issues in Deep Foundations_, ASCE Geo Institute, GSP, V. I, No. 158, 2007, pp. 1-12.
+
+Kandaris, P. M. and Davidow, S., "Study of Electric Transmission Line Deep Foundation Design," Electrical Transmission and Substation Structures 2015, ASCE, pp. 577-587.
+
+Liang, Xiao; Beck, Ryan and Sritharan, Sri, "Understanding the Confined Concrete Behavior on the Response of Hollow Bridge Columns," California Department of Transportation Caltrans Project Contract: 65A0412, January 2015.
+
+Mullins, G.; Johnson, Kevin R. and Winters, D., "Controlling Mass Concrete Effects in Large-Diameter Drilled Shafts Using Full-Length Central Void," _ACI Structural Journal_, American Concrete Institute, V. 115, No. 5, September 2018, pp. 1-10.
