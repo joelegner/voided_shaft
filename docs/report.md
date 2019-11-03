@@ -120,9 +120,47 @@ AISC Section I1.3(1) requires that $3000 \leq f'_c\leq10000$ psi for normal weig
 
 AISC Section I1.3(2) limits reinforcing steel $f_y \leq 75000$ psi.
 
-For encased steel members, AISC Section I2.1a adds these restrictions:
+For encased steel members, AISC Section I2.1a requires that the steel cross-section shall be at least 1% of the total composite cross section. We will conservatively assume that the void should not be exluded from the composite cross section when calculating the area.
 
-1. The steel cross-section shall be at least 1% of the total composite cross section. We will conservatively assume that the void should not be exluded from the composite cross section when calculating the area.
+$$A_{comp} = \dfrac{\pi D^2}{4} $$
+
+$$A \geq 0.01 A_{comp}$$
+
+For the inner casing, holding $D_i$ to be the outside diameter:
+
+$$A =  \dfrac{\pi \left[ D_i^2 - \left( D_i - 2t \right)^2 \right]}{4}$$
+
+$$t = \dfrac{ D_i - \sqrt{ D_i^2 - \dfrac{4 \times 0.01A_{comp}  }{\pi}}}{2}$$
+
+{% set D = 12.0*9.0 %}
+{% set pi=355.0/113.0 %}
+{% set A_comp = pi*D*D/4.0 %}
+{% set A_min = 0.01*A_comp %}
+
+For the subject nine-foot diameter shaft of this study, we can calculate the required thickness of the interior shell:
+
+$$A_{comp} = \dfrac{\pi {{D|s}}^2}{4} = {{A_comp|s}}\text{ in}^2 $$
+
+Required area of the central tube becomes:
+
+$$A \geq 0.01 A_{comp} = {{A_min|s}} \text{ in}^2$$
+
+{% set Di=48.0 %}
+{% set t=(Di - (Di**2 - 4*A_min/pi)**0.5)/2.0 %}
+
+$$t = \dfrac{ {{Di|s}} - \sqrt{ {{Di|s}}^2 - \dfrac{4 \times {{A_min|s}}  }{\pi}}}{2} = {{t|s}}\text{ in; say 5/8''}$$
+
+{% set tie_sp = 0.5*D %}
+
+AISC Section I2.1a also requires the following tie detailing:
+
+-   #3 at 12 inches on center maximum; or,
+
+-   #4 at 16 inches on center maximum and,
+
+-   Tie spacing shall not exceed $0.5 D$ -- this will never control for transmission structure drilled shafts.
+
+AISC Section I2.1a requires that the axial steel not be less than $0.004A_{comp}$ which is less than the 0.005A_g requirement of ACI 318-14 and is probably intended for beams rather than columns.
 
 # Cost Comparison
 
