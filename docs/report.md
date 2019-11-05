@@ -1,6 +1,6 @@
 % Voided Shafts for Transmission Structure Foundations -- Feasibility Study
 % Joe Legner, P.E., S.E.
-% October 26, 2019
+% November 4, 2019
 
 # Introduction
 
@@ -66,11 +66,27 @@ The construction method employed in the Johnson and Mullins test shaft employed 
 
 ![FDOT Demonstration Shaft P-M Diagram](./images/demo-shaft-interaction.png){ width=5in }
 
-## Code Analysis
+## Code Review
 
-There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. We will adopt the ACI 318-14 code for this report.
+There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. This study adopts the ACI 318-14 code for concrete design which appears to be as close to industry standard practice as we can determine.
+
+ACI 318 Section 1.4.6 and Section 13.1.2 exclude drilled shafts ("drilled piers" in ACI) from the code, except in two cases:
+
+1. Where shafts are laterally unsupported such as in water; and,
+
+1. For structures in Seismic Design Categories D, E, and F.
+
+Chapter 13 of the code gives foundation design requirements. However, detailed requirements for drilled shafts are not given. Refer to Section 13.4.3.
+
+Chapter 14 of the ACI 318 code deals with plain concrete. Section 14.1.2 specifically excludes drilled shafts and refers the user to the general building code. In some states, including Florida, transmission line structures are excluded from the building code requirements, leaving us with no code for the design of such foundations.
+
+ACI 336.3-93 is outdated but recommends using the ACI 318 code for concrete design for drilled shafts, in contradiction to the ACI 318 code itself. It also recommends that ACI 318.1, which was previously a parallel code for plain concrete, be used for the design of piers with sufficient lateral resistance of soil provided, again in contradiction to the ACI 318 code.
+
+## Structural Design Requirements
 
 Assumptions:
+
+1. Drilled shaft is laterally restrained by soil and does not need to be designed in accordance with ACI 318 Chapter 10 per Section 13.4.3.1.
 
 1. Specified compressive strength of concrete $$ 3000\text{ psi} \leq f'\_c \leq 4000 \text{ psi} $$. $$\beta_1 = 0.85 $$
 
@@ -80,7 +96,7 @@ Assumptions:
 
 1. The inner tube behaves as a composite member.
 
-Minimum steel is required for the column. Because the proportions of a drilled shaft are governed by either the geotechnical soil requirements or anchor bolt circle minimum edge distance requirements, ACI 318 Section 10.3.1.2 allows us to use one-half the gross cross-sectional area for minimum steel calculations. Therefore minimum steel is:
+Minimum steel is required for the column. Minimum reinforcement is specified in ACI 318 Section 10.6.1.1 as 1% of the gross area of the member: $A_{s,min} = 0.01A_g$. However, because the proportions of a drilled shaft are governed by either the geotechnical soil requirements or anchor bolt circle minimum edge distance requirements, ACI 318 Section 10.3.1.2 allows us to use one-half the gross cross-sectional area for minimum steel calculations. Therefore minimum steel is:
 
 $$ A_{s,min} = 0.005 A_g = \dfrac{ \pi (D^2 - D_i^2) }{4} $$
 
@@ -102,11 +118,19 @@ $P_n$ and $M_n$ are calculated in accorance with ACI 318 Section 21.2.
 
 The concrete shaft and its inner liner could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Seciton 4b). To qualify as an encased composite shape requires that the load transfer region be furnished with steel anchors. For transmission line structures, the added cost and labor to attach steel anchors to the inner liner would not be justified. Sufficient strength is achievable in the concrete section without designing it as a composite member.
 
+Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$.
+
+Transverse reinforcement is required to be provided for bars in axial compression. Section 25.7.2 provides the requirements. The two requirements that are likely to control drilled shaft foundations are that $s \leq 16d_b$ of the longitudinal bar and $s \leq 48d_b$ of the tie bar size.
+
+Additional ties at the top of the pier are required by ACI 318 Section 10.7.6.1.6. They shall be at least two #4 bars within the top 5 inches of the drilled shaft.
+
 # Cost Comparison
 
 # References
 
 American Concrete Institute, _Building Code Requirements for Structural Concrete_, ACI 318-14, 2014.
+
+American Concrete Institute, _Design and Construction of Drilled Piers_, ACI 336-93 (Reapproved 2006), 1993.
 
 American Institute of Steel Construction, _Specification for Structural Steel Buildings_, AISC 360-10, June 22, 2010.
 
