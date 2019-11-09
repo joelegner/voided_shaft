@@ -38,4 +38,4 @@ report-processed.md: report.md
 
 .PHONY: open
 open:
-	open $(BUILDDIR)/report.pdf 
+	open -a "PDF Studio 2018.app" $(BUILDDIR)/report.pdf 
