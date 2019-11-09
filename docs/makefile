@@ -2,8 +2,10 @@ TEMPLATEDIR = .
 BUILDDIR = ../output
 IMGDIR = images
 
+.PHONY: all
+all: docx pdf
 
-report: images report-processed.md
+docx: images report-processed.md
 	@echo "Build Word document report..."
 	pandoc --bibliography report.bibtex -f markdown+implicit_figures report-processed.md --reference-doc=format.docx -o ../output/report.docx
 	@echo "done.  See output/report.docx"
