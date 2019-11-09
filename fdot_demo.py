@@ -21,13 +21,18 @@ if __name__ == "__main__":
     plt.savefig(os.path.join("docs/images", "demo-shaft-unvoided.png"))
 
     plt.clf()
-    phiMn_max, phiPn_max = plot_interaction_diagram(shaft)
     shaft.Di = 48.0
-    phiMn_max, phiPn_max = plot_interaction_diagram(shaft)
+    phiMn_max, phiPn_max = plot_interaction_diagram(shaft, label="Voided shaft")
+    shaft.Di = 0.0
+    phiMn_max, phiPn_max = plot_interaction_diagram(shaft, label="Equivalent solid shaft")
 
     # Add titles and save
-    plt.title("P-M Diagram for FDOT Demonstration Shaft")
+    plt.legend()
     plt.savefig(os.path.join("docs/images", "demo-shaft-interaction.png"))
+
+    plt.scatter(5200.0, 30.0, label="Worst-Case Real-World Load Combination")
+    plt.legend()
+    plt.savefig(os.path.join("docs/images", "real-world-demo-shaft-interaction.png"))
 
     plt.clf()
     plot_voided_shaft(shaft)

@@ -118,15 +118,11 @@ $$\boxed{V_n = 1.56 \sqrt{f'_c} D \left( D - D_i \right) }$$
 
 # Numerical Example
 
-To elaborate on the work of Johnson and Mullins (2007) we will look at a numerical example based upon the same shaft design as was constructed by the FDOT demonstration shaft (Mullins, Johnson, and Winters 2018).
+To elaborate on the work of Johnson and Mullins (2007) we will look at a numerical example based upon the same shaft design as was constructed by the FDOT demonstration shaft (Mullins, Johnson, and Winters 2018). It is referred to herein as the "FDOT Demonstration Shaft."
 
 ![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-plan.png){ width=4in }
 
 ![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-elevation.png){ width=4in }
-
-![FDOT Demonstration Shaft](./images/demo-shaft-voided.png){ width=4in }
-
-![FDOT Demonstration Shaft vithout Void](./images/demo-shaft-unvoided.png){ width=4in }
 
 ## Given
 
@@ -173,26 +169,20 @@ Transverse reinforcement is required to be provided for bars in axial compressio
 
 Additional ties at the top of the pier are required by ACI 318 Section 10.7.6.1.6. They shall be at least two #4 bars within the top 5 inches of the drilled shaft.
 
-## Load Combinations
-
 ## Combined Axial and Flexure
 
 By ACI 318 definitionthe gross are of the drilled shaft excludes the void area:
 
 {% set Ag = 355.0/113.0*(D*D - Di*Di)/4.0 %}
-
 $$A_g = \dfrac{ \pi \left( D^2 - D_i^2 \right) }{4} = \dfrac{ \pi \left( {{D|s}}^2 - {{Di|s}}^2 \right) }{4} = {{Ag|s}}\text{ in}^2$$
 
-The maximum compressive strength for a tied columns according to ACI 318 Section 22.4.2:
+The maximum compressive strength for a tied column according to ACI 318 Section 22.4.2:
 
 $$P_{n,max} = 0.80 \left[ 0.85 f'_c \left( A_g - A_{st} \right) + f_y A_{st}    \right]$$
 
 {% set Pnmax = 0.80*(0.85*fc*(Ag - Ast) + fy*Ast)/1000.0 %}
-
 {% set phiPnmax = 0.65*Pnmax %}
-
 $$P_{n,max} = 0.80 \left[ 0.85 \times {{fc|s}} \left( {{Ag|s}} - {{Ast|s}} \right) + {{fy|s}} \times {{Ast|s}}   \right] /1000 = {{Pnmax|s}}\text{ kips}$$
-
 $$\phi P_{n,max} = 0.65 \times {{Pnmax|s}} = {{phiPnmax|s}}\text{ kips}$$
 
 ## Shear
@@ -200,14 +190,51 @@ $$\phi P_{n,max} = 0.65 \times {{Pnmax|s}} = {{phiPnmax|s}}\text{ kips}$$
 {% set Vn = 1.56*fc**(0.5)*D*(D- Di)/1000.0 %}
 {% set phiv = 0.75 %}
 {% set phiVn = phiv*Vn %}
-
 The nominal shear capacity of the demonstration shaft is:
-
 $$V_n = 1.56 \sqrt{ {{fc|s}}  } ({{D|s}})({{D|s}} - {{Di|s}})/1000 = {{Vn|s}}\text{ kips}$$
-
 $$\phi V_n = {{phiv|f}} \times {{Vn|s}} = {{phiVn|s}}\text{ kips}$$
 
 Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$.
+
+Interaction diagram produced by Python computer program:
+
+![FDOT Demonstration Shaft Interaction Diagram](./images/demo-shaft-interaction.png){ width=5in }
+
+## Comparison to Real-World Design
+
+{% set fdot_Ast = Ast %}
+{% set Ab = 1.56 %}
+{% set n = 30.0 %}
+{% set Ast = n*Ab %}
+{% set Ast_increase = 100.0*(Ast - fdot_Ast)/fdot_Ast %}
+
+We will now compare the capacity of the FDOT Demonstration Shaft to a real-world transmission line structures. The subject structure is being constructed by the local regulated electric utility in Apollo Beach, Florida as part of a transmission line structure. The structure's anchor bolt cage has a bolt circle diameter of 7 feet. The foundation engineer selected a shaft diameter of 9 feet to provide an adequate anchor bolt edge distance. This is coincidentally the same as the shaft diameter of the FDOT Demonstration Shaft which allows direct comparison of the two. Reinforcement of the real-world shaft is 30-#11 bars, so $A_{st} = {{n}} \times {{Ab|s}} = {{Ast|s}}\text{ in}^2$ which is {{Ast_increase|i}}% greater than the FDOT Demonstration Shaft.
+
+![Real-World Anchor Bolt Cage (Author's Photo)](./images/real-world-anchor-bolt-cage.jpg){ width=5in }
+
+Factored loads given to the foundation design engineer by the structure design engineer:
+
+{% set Vu = 55.0 %}
+{% set Mg = 5000.0 %}
+{% set Mu = 5196.0 %}
+{% set z=5.1 %}
+{% set Pu=30.0 %}
+
+-   Shear force, $V_u = {{Vu|s}}$ kips.
+-   Applied groundline moment, $M_g = {{Mg|s}}$ kip-ft.
+-   Maximum moment in the shaft, $M_u = {{Mu|s}}$ kip-ft at a depth of {{z|s}} ft below the ground surface per LPile analysis.
+-   Vertical download load, $P_u = {{Pu|s}}$ kips.
+
+Check shear:
+$$\phi V_n = {{phiVn|s}} > {{Vu|s}}\text{ kips - OK}$$
+
+No shear reinforcement is required.
+
+To check combined axial load and flexure in accordance with ACI 318 Section 10.4.2.1, we will plot the point ($M_u$, $P_u$) on the voided interaction diagram: ({{Mu|s}}, {{Pu|s}}).
+
+![Real-World Load Combination on FDOT Demonstration Shaft Interaction Diagram](./images/real-world-demo-shaft-interaction.png){ width=5in }
+
+As shown in the interaction diagram, the load combination falls within the interaction envelope of the voided shaft foundation. This means the voided shaft concept can feasibly safely support a real-world transmission line structure, further validating the concept.
 
 # Cost Comparison
 

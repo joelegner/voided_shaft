@@ -33,7 +33,7 @@ def plot_rebar(plt, shaft):
         plt.gca().add_patch(bar_circle)
 
 
-def plot_interaction_diagram(shaft):
+def plot_interaction_diagram(shaft, label=""):
 
     SEGMENTS = 400
 
@@ -61,8 +61,8 @@ def plot_interaction_diagram(shaft):
 
         shaft.c = shaft.c - shaft.D/SEGMENTS
 
-    plt.xlabel("Moment, kip-ft")
-    plt.ylabel("Axial Load, kips")
-    plt.plot(xs, ys)
+    plt.xlabel("Moment, $\phi M_n$, kip-ft")
+    plt.ylabel("Axial Load, $\phi P_n$, kips")
+    plt.plot(xs, ys, label=label)
 
     return (phiMn_max, phiPn_max)
