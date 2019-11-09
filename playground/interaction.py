@@ -42,18 +42,19 @@ def plot_interaction(shaft, filename="interaction-diagram.png"):
         phiMn_max = max(phiMn_max, phiMn)
 
         shaft.c = shaft.c - shaft.D/SEGMENTS
+    plt.plot(xs, ys, label="Python Program Diagram")
 
-    plt.plot(xs, ys)
-
-    plt.scatter(1645.0, 1004.0, color="red")
+    plt.scatter(1645.0, 1004.0, color="red", label="Point from CRSI Example")
     plt.scatter(2353.0, 0.0, color="red")
     plt.scatter(2487.0, 789.0, color="red")
     plt.scatter(2794.0, 638.0, color="red")
     plt.scatter(2913.0, 523.0, color="red")
     plt.scatter(2927.0, 333.0, color="red")
 
-    plt.title(
-        "Agreement Between Python Program\nand 2008 CRSI Example on p. 4-7")
+    plt.legend()
+
+    plt.xlabel("Moment, $\phi M_n$, kip-in")
+    plt.ylabel("Axial Compression, $\phi P_n$, kips")
 
     plt.savefig(os.path.join("output", filename))
 
@@ -68,6 +69,7 @@ if __name__ == "__main__":
     test_shaft.tiebar = bars["#3"]
     test_shaft.concrete.fc = 6000.0
     test_shaft.c = 20.51791
-    phiMn_max, phiPn_max = plot_interaction(test_shaft, "interaction.png")
+    phiMn_max, phiPn_max = plot_interaction(
+        test_shaft, "../docs/images/python-validation.png")
     plot_drilled_shaft(test_shaft, "test_shaft.png")
     print("Maximum phiMn = {} and maximum phiPn = {}".format(phiMn_max, phiPn_max))
