@@ -1,6 +1,6 @@
 % Voided Shafts for Transmission Structure Foundations -- Feasibility Study
 % Joe Legner, P.E., S.E.
-% November 8, 2019
+% November 9, 2019
 
 # Introduction
 
@@ -8,7 +8,7 @@ Transmission structures are used to elevate electric power lines to a safe dista
 
 Drilled shafts are deep foundations constructed by drilling a circular hole with an auger and filling the hole with concrete. The shaft is reinforced with a cage of vertical bars and ties. Drilled shafts can be large enough in diameter that they behave as mass concrete. With this comes the risk of a phenomenon called Delayed Ettringite Formation (DEF). DEF is a process by which the mineral ettringite forms after hardening is substantially complete. It does not involve sulfate from outside the cement paste -- a related process called _sulfate attack_. High hydration temperatures in mass concrete prevent the normal initial ettringite formation from occurring. As the hydration progresses and the temperature drops below a threshold, ettringite is able to start forming. Its expansive reaction develops tensile loads in the concrete which cause cracking damage and can lead to serviceability problems and structural failures.
 
-![Drilled shaft likely damaged by DEF (Author's Photo)](./images/cracked-shaft.jpg){ width=4in }
+![Drilled shaft likely damaged by DEF (Author's Photo)](./images/cracked-shaft.jpg){ width=3.5in }
 
 ## Transmission Line Structure Foundations
 
@@ -30,19 +30,13 @@ Johnson and Mullins (2007) devised a mitigation concept which is to cast a conti
 
 To further investigate the voided shaft idea, the Florida Department of Transportation (FDOT) sponsored a demonstration shaft, 9 feet in diameter with a 4-foot diameter central void (Mullins, Johnson, and Winters 2018). It used an FDOT Class IV concrete mixture ($f'_c = 4000\text{ psi}$) reinforced with 36 #9 bars and #5 stirrups. The demonstration project validated the constructibility of the concept.
 
-Background of the voided shaft concept and past demonstration project.
-
-Possible structural code issues (is there a maximum internal cover thickness, does it need a central cage as well as the normal age?)
-
-Methods of verification, testing. Things that a test may test: soil behavior, structural bending and shear resistance. Limits nt test configurations: may test soil well but does not impose the correct bending moment in the element. Power poles are weird,nt, moderate to high lateral forces, low axial load
-
-Maybe a cost comparison: I recently got a quote for a cooling system for 7ft diameter, 25ft long shaft at \$25k. So, savings can be not only concrete removed vs. the cost of a permanent central casing.
+    Methods of verification, testing. Things that a test may test: soil behavior, structural bending and shear resistance. Limits nt test configurations: may test soil well but does not impose the correct bending moment in the element. Power poles are weird,nt, moderate to high lateral forces, low axial load
 
 # Structural Design
 
 ## Code Review
 
-There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. This study adopts the ACI 318-14 code for concrete design which appears to be as close to industry standard practice as we can determine.
+There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. This study adopts the ACI 318-14 code for concrete design which appears to be as close to industry standard practice as we can determine. References throughout to ACI 318 are to the ACI 318-14 code specifically.
 
 ACI 318 Section 1.4.6 and Section 13.1.2 exclude drilled shafts ("drilled piers" in ACI) from the code, except in two cases:
 
@@ -56,9 +50,7 @@ Chapter 14 of the ACI 318 code deals with plain concrete. Section 14.1.2 specifi
 
 ACI 336.3-93 is outdated but recommends using the ACI 318 code for concrete design for drilled shafts, in contradiction to the ACI 318 code itself. It also recommends that ACI 318.1, which was previously a parallel code for plain concrete, be used for the design of piers with sufficient lateral resistance of soil provided, again in contradiction to the ACI 318 code.
 
-## Confinement Considerations
-
-Structural design of transmission line foundation piers requires consideration of (1) flexure, (2) axial load, and (3) shear and torsion. Because of the nature of transmission line structure loads, axial and shear loads are small relative to bridge foundations, for example. Flexure is the primary loading that needs to be resisted.
+## Confinement
 
 Confinement increase the strength of concrete and maximizes the strength contribution of longitudinal steel reinforcing bars to the strength of the foundation by preventing the steel from buckling out the side of the shaft. The ACI code allows the use of either spiral reinforcement or circular ties for confinements. Solid circular drilled shafts are confined using ties. But hollow cylindrical column confinement is not as straightforward. The outer face of the column is confined with ordinary ties. However, it is also possible for the inside face of a hollow section to fail. To prevent such a failure, a variety of approaches have been considered in the literature:
 
@@ -78,29 +70,23 @@ Double mats are effective at preventing the axial bars from buckling inward.
 
 The construction method employed in the Johnson and Mullins test shaft employed an inner permanent casing. Such a casing could prevent the axial bars from buckling inward, thereby increasing the potential axial and flexural capacity of the voided shaft. Inner steel tube confines axial bars (Han 2010).
 
-![FDOT Demonstration Shaft](./images/demo-shaft-voided.png){ width=4in }
+## Structural Design Overview
 
-![FDOT Demonstration Shaft vithout Void](./images/demo-shaft-unvoided.png){ width=4in }
+Structural design of transmission line foundation piers requires consideration of (1) axial and flexural strength and (2) shear and torsion. Capacity reduction factors are given in ACI Table 21.2.1. For combined flexure and axial load, $0.65 \leq \phi \leq 0.90$ per Section 21.2.2 and Table 21.2.2. For shear and torsion, $\phi = 0.75$, and for anchor bolts, $0.45 \leq \phi \leq 0.75$ in accordance with Chapter 17.
 
-![FDOT Demonstration Shaft P-M Diagram](./images/demo-shaft-interaction.png){ width=5in }
+## Axial and Flexural
 
-## Axial Load
+Because of the nature of transmission line structure loads, axial and shear loads are small relative to bridge foundations, for example. Flexure is the primary loading that needs to be resisted. However, ACI 318 Section 10.4.2.1 requires that the designer consider $P_u$ and $M_u$ simultaneously for each load combination. The usual way to account for this is to use an interaction diagram as depicted in ACI 318 Figure R10.4.2.1.
 
-## Flexure
+Minimum steel is required for the column. Minimum reinforcement is specified in ACI 318 Section 10.6.1.1 as 1% of the gross area of the member: $A_{s,min} = 0.01A_g$. However, because the proportions of a drilled shaft are governed by either the geotechnical soil requirements or anchor bolt circle minimum edge distance requirements, ACI 318 Section 10.3.1.2 allows us to use one-half the gross cross-sectional area for minimum steel calculations. Therefore minimum steel is:
 
-## Shear
+$$A_{s,min} = 0.005 A_g = \dfrac{ \pi (D^2 - D_i^2) }{4} $$
 
-Shear is computed in accordance with ACI 318 Section 22.5.
+For combined axial and flexure $\phi$ depends on whether the section is classified as compression-controlled and tension-controlled. There is also a transition region between the two where $\phi$ varies linearly. For deformed bars, $\epsilon_{ty} = f_y/E_s = 0.00207$ for Grade 60 bars as assumed here.
 
-$$V_n = V_c + V_s$$
+![Variation of with net tensile strain in extreme tension reinforcement](./images/compression-tension-controlled.png){ width=4in }
 
-We will for the time being conservatively use $V_s = 0$ because the concrete strength is likely to be sufficent for transmission line structure foundations. Such structures also do not usually have a significant axial force, so we my use ACI 318 Eq. (22.5.5.1) to calculate the shear capacity of the concrete:
-
-$$V_c = 2 \lambda \sqrt{f'_c} b_w d$$
-
-For solid round sections, Section 22.5.2.2 of ACI 318 states that Eq. (22.5.5.1) should be used, substituting $d=0.8D$ and $b_w = D$ which gives:
-
-$$V_c = 2 \lambda \sqrt{f'_c} 0.8 D^2$$
+## Shear and Torsion
 
 The ACI 318 code does not address hollow circular sections, so we must find another reference to calculate the shear capacity. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. The area of concrete effective in shear, $A_{cv}$ is equal to:
 
@@ -108,7 +94,7 @@ $$A_{cv} = \left( 2 - \psi \right)b_v h$$
 
 $$\psi = \dfrac{b_x}{b_v}$$
 
-\$$b_v \leq 0.78D$
+$$b_v \leq 0.78D$$
 
 Where:
 
@@ -136,6 +122,12 @@ $$\boxed{V_n = 1.56 \sqrt{f'_c} D \left( D - D_i \right) }$$
 
 # Numerical Example
 
+![FDOT Demonstration Shaft](./images/demo-shaft-voided.png){ width=4in }
+
+![FDOT Demonstration Shaft vithout Void](./images/demo-shaft-unvoided.png){ width=4in }
+
+![FDOT Demonstration Shaft P-M Diagram](./images/demo-shaft-interaction.png){ width=5in }
+
 ## Assumptions
 
 1. Drilled shaft is laterally restrained by soil and does not need to be designed in accordance with ACI 318 Chapter 10 per Section 13.4.3.1.
@@ -148,23 +140,11 @@ $$\boxed{V_n = 1.56 \sqrt{f'_c} D \left( D - D_i \right) }$$
 
 1. The inner tube behaves as a composite member.
 
-Minimum steel is required for the column. Minimum reinforcement is specified in ACI 318 Section 10.6.1.1 as 1% of the gross area of the member: $A_{s,min} = 0.01A_g$. However, because the proportions of a drilled shaft are governed by either the geotechnical soil requirements or anchor bolt circle minimum edge distance requirements, ACI 318 Section 10.3.1.2 allows us to use one-half the gross cross-sectional area for minimum steel calculations. Therefore minimum steel is:
-
-$$ A_{s,min} = 0.005 A_g = \dfrac{ \pi (D^2 - D_i^2) }{4} $$
+1. Structure is in Seismic Design Category A, B, or C.
 
 The required inner tube thickness is controlled by ACI Section 10.3.1.6.
 
-$$ t_{min} = D \sqrt{\dfrac{fy}{8E_s}} $$
-
-Design equations per ACI Section 10.5.1.1:
-
-$$ \phi P_n \geq P_u $$
-
-$$ \phi M_n \geq M_u $$
-
-$$ \phi V_n \geq V_u $$
-
-$$ \phi T_n \geq T_u $$
+$$t_{min} = D \sqrt{\dfrac{fy}{8E_s}} $$
 
 $P_n$ and $M_n$ are calculated in accorance with ACI 318 Section 21.2.
 
@@ -177,6 +157,94 @@ Transverse reinforcement is required to be provided for bars in axial compressio
 Additional ties at the top of the pier are required by ACI 318 Section 10.7.6.1.6. They shall be at least two #4 bars within the top 5 inches of the drilled shaft.
 
 # Cost Comparison
+
+# Symbols Used
+
+Notation generally follows ACI conventions with deviations noted.
+
+$a$ = depth of rectangular (Whitney) stress block, in.
+
+$A_b$ = area of individual bar, $\text{in.}^2$.
+
+$A_g$ = gross area of concrete section which excludes the void area, $\text{in.}^2$.
+
+$A_s$ = area of nonprestressed longitudinal reinforcement, $\text{in.}^2$.
+
+$A_s'$ = area of compression reinforcement, $\text{in.}^2$.
+
+$A_{s,min}$ = minimum area of reinforcement, $\text{in.}^2$.
+
+$A_t$ = area of one leg of a hoop, $\text{in.}^2$.
+
+$b$ = width of compression member, in.
+
+$b_w$ = web width, in. Deviation: use $D$ for diameter of circular section.
+
+$c$ = distance from extreme compression fiber to neutral axis, in.
+
+$d$ = distance from extreme compression fiber to centroid of longitudinal tension reinforcement, in.
+
+$d'$ = distance from extreme compression fiber to centroid of longitudinal compression reinforcement, in.
+
+$d_b$ = diameter of bar, in.
+
+$D$ = outside diameter of concrete, in.
+
+$D_i$ = inside diameter of concrete = outside diameter of liner, in.
+
+$E_c$ = modulus of elasticity of concrete, psi.
+
+$E_s$ = modulus of elasticity of steel = 29000000 psi.
+
+$f'_c$ = specified compressive strength of concrete, psi.
+
+$\sqrt{f'_c}$ = square root of specified compressive strength of concrete, psi.
+
+$f_y$ = yield strength for nonprestressed reinforcement, psi.
+
+$f_{yt}$ = yield strength for nonprestressed reinforcement hoops, psi.
+
+$M_n$ = nominal flexural strength at section, kip-ft (deviation).
+
+$M_u$ = factored moment at section, kip-ft (deviation).
+
+$n$ = number of items such as longitudinal reinforcing bars.
+
+$P_n$ = nominal axial compressive strength of member, kips (deviation).
+
+$P_u$ = factored axial force to be taken as positive for compression and negative for tension, kips (deviation).
+
+$s$ = center to center spacing of items such as hoops, in.
+
+$t$ = wall thickness of hollow section = $(D - D_i)/2$, in.
+
+$T_c$ = nominal torsion strength provided by concrete, kips (deviation).
+
+$T_n$ = nominal torsion strength provided by section, kips (deviation).
+
+$T_s$ = nominal torsion strength provided by steel, kips (deviation).
+
+$T_u$ = factored torsion force at section, kips (deviation).
+
+$V_c$ = nominal shear strength provided by concrete, kips (deviation).
+
+$V_n$ = nominal shear strength provided by section, kips (deviation).
+
+$V_s$ = nominal shear strength provided by steel, kips (deviation).
+
+$V_u$ = factored shear force at section, kips (deviation).
+
+$\beta_1$ = factor relating depth of equivalent rectangular compressive stress block to depth of neutral axis.
+
+$\epsilon_t$ = net tensile strain in extreme layer of longitudinal tension reinforcement at nominal strength.
+
+$\epsilon_{ty}$ = value of net tensile strain in the extreme layer of longitudinal tension reinforcement used to define a compression-controlled section.
+
+$\rho$ = ratio of $A_s$ to $bd$.
+
+$\phi$ = strength reduction factor.
+
+$\psi$ = factor from ACI 371R-08 effective shear area formula.
 
 # References
 
