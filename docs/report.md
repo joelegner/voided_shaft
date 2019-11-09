@@ -1,6 +1,6 @@
 % Voided Shafts for Transmission Structure Foundations -- Feasibility Study
 % Joe Legner, P.E., S.E.
-% November 4, 2019
+% November 8, 2019
 
 # Introduction
 
@@ -40,32 +40,6 @@ Maybe a cost comparison: I recently got a quote for a cooling system for 7ft dia
 
 # Structural Design
 
-## Confinement Considerations
-
-Structural design of transmission line foundation piers requires consideration of (1) flexure, (2) axial load, and (3) shear and torsion. Because of the nature of transmission line structure loads, axial and shear loads are small relative to bridge foundations, for example. Flexure is the primary loading that needs to be resisted.
-
-Confinement increase the strength of concrete and maximizes the strength contribution of longitudinal steel reinforcing bars to the strength of the foundation by preventing the steel from buckling out the side of the shaft. The ACI code allows the use of either spiral reinforcement or circular ties for confinements. Solid circular drilled shafts are confined using ties. But hollow cylindrical column confinement is not as straightforward. The outer face of the column is confined with ordinary ties. However, it is also possible for the inside face of a hollow section to fail. To prevent such a failure, a variety of approaches have been considered in the literature:
-
-1. Provide a single mat of bars near the outside face and do not confine the inside face of the section.
-
-2. Provide a second mat of bars, including ties, on the inside face. Cross-ties are provided to connect the two mats (Liang et. al. 2015).
-
-3. Confine the inside face using a hollow steel section (Liang et. al. 2015).
-
-Liang, Beck, and Sritharan (2015) investigated single- and double-mats for the California Department of Transportation (CalTrans) and found that double mats are the most effective. However, this was for bridges which have a significant axial load and shear loads in earthquake-prone regions like California. For reptitive transmission structures without significant axial or shear load, the added expense of the second mat and cross-ties should be avoided if possible.
-
-Test results show that the single mat of bars near the outside face is liable to fail by buckling of the axial bars toward the inner void.
-
-Double mats are effective at preventing the axial bars from buckling inward.
-
-The construction method employed in the Johnson and Mullins test shaft employed an inner permanent casing. Such a casing could prevent the axial bars from buckling inward, thereby increasing the potential axial and flexural capacity of the voided shaft. Inner steel tube confines axial bars (Han 2010).
-
-![FDOT Demonstration Shaft](./images/demo-shaft-voided.png){ width=4in }
-
-![FDOT Demonstration Shaft vithout Void](./images/demo-shaft-unvoided.png){ width=4in }
-
-![FDOT Demonstration Shaft P-M Diagram](./images/demo-shaft-interaction.png){ width=5in }
-
 ## Code Review
 
 There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. This study adopts the ACI 318-14 code for concrete design which appears to be as close to industry standard practice as we can determine.
@@ -82,9 +56,87 @@ Chapter 14 of the ACI 318 code deals with plain concrete. Section 14.1.2 specifi
 
 ACI 336.3-93 is outdated but recommends using the ACI 318 code for concrete design for drilled shafts, in contradiction to the ACI 318 code itself. It also recommends that ACI 318.1, which was previously a parallel code for plain concrete, be used for the design of piers with sufficient lateral resistance of soil provided, again in contradiction to the ACI 318 code.
 
-## Structural Design Requirements
+## Confinement Considerations
 
-Assumptions:
+Structural design of transmission line foundation piers requires consideration of (1) flexure, (2) axial load, and (3) shear and torsion. Because of the nature of transmission line structure loads, axial and shear loads are small relative to bridge foundations, for example. Flexure is the primary loading that needs to be resisted.
+
+Confinement increase the strength of concrete and maximizes the strength contribution of longitudinal steel reinforcing bars to the strength of the foundation by preventing the steel from buckling out the side of the shaft. The ACI code allows the use of either spiral reinforcement or circular ties for confinements. Solid circular drilled shafts are confined using ties. But hollow cylindrical column confinement is not as straightforward. The outer face of the column is confined with ordinary ties. However, it is also possible for the inside face of a hollow section to fail. To prevent such a failure, a variety of approaches have been considered in the literature:
+
+1. Provide a single mat of bars near the outside face and do not confine the inside face of the section.
+
+2. Provide a second mat of bars, including ties, on the inside face. Cross-ties are provided to connect the two mats (Liang et. al. 2015).
+
+3. Confine the inside face using a hollow steel section (Liang et. al. 2015).
+
+Liang, Beck, and Sritharan (2015) investigated single- and double-mats for the California Department of Transportation (CalTrans) and found that double mats are the most effective. However, this was for bridges which have a significant axial load and shear loads in earthquake-prone regions like California. For reptitive transmission structures without significant axial or shear load, the added expense of the second mat and cross-ties should be avoided if possible.
+
+Test results show that the single mat of bars near the outside face is liable to fail by buckling of the axial bars toward the inner void.
+
+Hollow columns with only one outer layer of reinforcement near the surface suffer from brittle failure when the inner face fails in compression.
+
+Double mats are effective at preventing the axial bars from buckling inward.
+
+The construction method employed in the Johnson and Mullins test shaft employed an inner permanent casing. Such a casing could prevent the axial bars from buckling inward, thereby increasing the potential axial and flexural capacity of the voided shaft. Inner steel tube confines axial bars (Han 2010).
+
+![FDOT Demonstration Shaft](./images/demo-shaft-voided.png){ width=4in }
+
+![FDOT Demonstration Shaft vithout Void](./images/demo-shaft-unvoided.png){ width=4in }
+
+![FDOT Demonstration Shaft P-M Diagram](./images/demo-shaft-interaction.png){ width=5in }
+
+## Axial Load
+
+## Flexure
+
+## Shear
+
+Shear is computed in accordance with ACI 318 Section 22.5.
+
+$$V_n = V_c + V_s$$
+
+We will for the time being conservatively use $V_s = 0$ because the concrete strength is likely to be sufficent for transmission line structure foundations. Such structures also do not usually have a significant axial force, so we my use ACI 318 Eq. (22.5.5.1) to calculate the shear capacity of the concrete:
+
+$$V_c = 2 \lambda \sqrt{f'_c} b_w d$$
+
+For solid round sections, Section 22.5.2.2 of ACI 318 states that Eq. (22.5.5.1) should be used, substituting $d=0.8D$ and $b_w = D$ which gives:
+
+$$V_c = 2 \lambda \sqrt{f'_c} 0.8 D^2$$
+
+The ACI 318 code does not address hollow circular sections, so we must find another reference to calculate the shear capacity. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. The area of concrete effective in shear, $A_{cv}$ is equal to:
+
+$$A_{cv} = \left( 2 - \psi \right)b_v h$$
+
+$$\psi = \dfrac{b_x}{b_v}$$
+
+\$$b_v \leq 0.78D$
+
+Where:
+
+$b_v$ is the length of the shell effective in shear in inches.
+
+$b_x$ is the length in inches of the shell at an opening.
+
+$h$ is the wall thickness in inches.
+
+We can simplify the equations by recognizing that transmission line structure drilled shafts will never have an opening, so $b_x = 0$, $\psi = 0$, and hence:
+
+$$A_{cv} = 2b_v h$$
+
+The formula for nominal shear strength from Section 5.2.2.7.6 of ACI 371R is:
+
+$$V_n = \left( a_c \sqrt{f'_c} + \rho_h f_y \right)A_{cv}$$
+
+$$a_c = 6 - \dfrac{2.5M_u}{V_u d_w}$$
+
+$$2 \leq a_c \leq 3$$
+
+Neglecting the reinforcing ratio of the ties, $\rho_h = 0$. We can also conservatively take $a_c$ to be the lower limit, $a_c = 2$ and let $h = (D - D_i)/2$, and $b_v = 0.78D$. Substituting all of these values into the formula for $V_n$ gives:
+
+$$\boxed{V_n = 1.56 \sqrt{f'_c} D \left( D - D_i \right) }$$
+
+# Numerical Example
+
+## Assumptions
 
 1. Drilled shaft is laterally restrained by soil and does not need to be designed in accordance with ACI 318 Chapter 10 per Section 13.4.3.1.
 
@@ -131,6 +183,8 @@ Additional ties at the top of the pier are required by ACI 318 Section 10.7.6.1.
 American Concrete Institute, _Building Code Requirements for Structural Concrete_, ACI 318-14, 2014.
 
 American Concrete Institute, _Design and Construction of Drilled Piers_, ACI 336-93 (Reapproved 2006), 1993.
+
+American Concrete Institute, _Guide for the Analysis, Design, and Construction of Elevated Concrete and Composite Steel-Concrete Water Storage Tanks_, ACI 371R-08, 2008.
 
 American Institute of Steel Construction, _Specification for Structural Steel Buildings_, AISC 360-10, June 22, 2010.
 
