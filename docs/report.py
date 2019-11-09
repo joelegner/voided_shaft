@@ -8,5 +8,4 @@ import os
 # and the template filename.
 context = {}
 
-# reportmaker.searchpath.append(os.path.abspath("templates/"))
 reportmaker.make_report_from_context(context, "report.md")

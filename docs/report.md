@@ -1,36 +1,36 @@
-% Voided Shafts for Transmission Structure Foundations -- Feasibility Study
-% Joe Legner, P.E., S.E.
+% Voided Shafts for Transmission Line Foundations -- Feasibility Study
+% Joe Legner, P.E., S.E.[^1]
 % November 9, 2019
 
-# Introduction
-
-Transmission structures are used to elevate electric power lines to a safe distance above ground. The height exposes them to wind. In addition to wind, the power lines exert lateral forces. The combined effects of the wires and wind is an overturning moment which is termed _groundline moment_. Transmission structures can consist of latticed towers, structures with two or three vertical poles connected at the top, and even imaginitive structures like the Mickey Mouse shaped Mickey Pylon near Walt Disney World in Orlando, Florida, but the most common type being installed in the United States today is the monopole. Monopoles can be constructed using concrete or steel. Concrete monopoles are installed by the age-old method of direct burial. Steel monopoles can be directly buried, too. But large steel monopoles that develop too high of a groundline moment for direct burial are built with drilled shaft foundations.
-
-Drilled shafts are deep foundations constructed by drilling a circular hole with an auger and filling the hole with concrete. The shaft is reinforced with a cage of vertical bars and ties. Drilled shafts can be large enough in diameter that they behave as mass concrete. With this comes the risk of a phenomenon called Delayed Ettringite Formation (DEF). DEF is a process by which the mineral ettringite forms after hardening is substantially complete. It does not involve sulfate from outside the cement paste -- a related process called _sulfate attack_. High hydration temperatures in mass concrete prevent the normal initial ettringite formation from occurring. As the hydration progresses and the temperature drops below a threshold, ettringite is able to start forming. Its expansive reaction develops tensile loads in the concrete which cause cracking damage and can lead to serviceability problems and structural failures.
-
-![Drilled shaft likely damaged by DEF (Author's Photo)](./images/cracked-shaft.jpg){ width=3.5in }
-
-## Transmission Line Structure Foundations
-
-Drilled shafts for transmission line structures typically range between about 2.5 feet and 10 feet in diameter (IEEE 2001). Even larger diameters have been constructed. The diameter of a shaft may be dictated by the anchor bolt circle diameter and required edge distance rather than by geotechnical concerns. At the larger end of the range, DEF is a real concern. Loads from wind and wires tend to be overturning and shear forces with small axial components than bridge shafts.
-
-Applications in the power industry / typical loads and shaft diameters presently and where voided shafts could be used.
-
-## Mitigation Techniques
-
-The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections and employing mix designs that develop lower heat of hydration.
+[^1]: Author is licensed as a Structural Engineer in Illinois and a Professional Engineer in both Florida and Massachusetts.
 
 # Background
 
+## Introduction
+
+Transmission structures are used to elevate electric power lines to a safe distance above ground. The height exposes them to wind. In addition to wind, the attached power lines exert lateral forces. The combined effects of the wires and wind is an overturning moment which is termed the _groundline moment_. Transmission structures can consist of latticed towers, structures with two or three vertical poles connected at the top, and even imaginitive structures like the Mickey Mouse shaped Mickey Pylon near Walt Disney World in Orlando, Florida. But the most common type being installed in the United States today is the monopole. Monopoles can be constructed using concrete or steel. Concrete monopoles are installed by the age-old method of direct burial. Steel monopoles can be directly buried, too; however, large steel monopoles that develop too high of a groundline moment for direct burial are built with drilled shaft foundations.
+
+Drilled shafts are deep foundations constructed by drilling a circular hole with an auger and filling the hole with concrete. The shaft is usually reinforced with a cage of vertical bars and ties.
+
+Drilled shafts for transmission line structures typically range between about 2.5 feet and 10 feet in diameter (IEEE 2001). Even larger diameters have been constructed. The shaft proportions are usually governed by geotechnical soil capacity, but can also be dictated by the anchor bolt circle diameter and required edge distance.
+
+Some drilled shaft designs become large enough in diameter that they behave as mass concrete. The Florida Department of Transportation (FDOT) requires that concrete be classified as mass concrete when the shaft exceeds 6 feet in diameter (FDOT 2018). Mass concrete carries with it the risk of a deleterious phenomenon called Delayed Ettringite Formation (DEF).
+
+## Delayed Ettringite Formation (DEF)
+
+DEF is a process by which the mineral ettringite forms expansively after hardening is substantially complete and cracks the shaft. The high hydration temperature in the mass concrete prevents the normal initial ettringite formation from occurring. As the hydration progresses and the temperature drops below a threshold, ettringite is able to start forming. Its expansive reaction develops tensile loads in the concrete which cause cracking damage and can lead to serviceability problems and structural failures.
+
+![Drilled shaft likely damaged by DEF (Author's Photo)](./images/cracked-shaft.jpg){ width=3.5in }
+
+The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections, employing mix designs that develop lower heat of hydration, and batching concrete using ice. These methods tend to rely on limiting the rate of the hydration reaction to reduce the amount of heat produced and keep the temperature below the threshold. Mitigating the concern with low heat of hydration techniques is problematic, because methods that delay curing also extend the length of the project, delaying the in-service date and increasing project costs. It would be better to find a way to construct large drilled shafts using conventional concrete or even high early strength mixes without DEF.
+
 ## Previous Work on Voided Shafts
 
-Mitigating the concern with low heat of hydration techniques is problematic, because the delayed curing also extends the length of the project, delaying completion and increasing project carrying costs. It would be better to find a way to construct large drilled shafts using conventional concrete or even high early strength mixes without DEF.
+Johnson and Mullins (2007) devised a mitigation concept they term "voided shaft" which is to cast a continuous void through the centerline of the pier. This reduces the overall quantity of heat-producing concrete and provides a second surface by which to dissipate heat from the shaft into the environment. Their 3D numerical modeling shows voiding shafts is capable of keeping temperatures below the threshold for DEF concern. Preliminary structural analysis shows that moment capacity would not be reduced significantly. Although axial capacity would be significantly reduced, this is not generally a concern for transmission line foundations. Additionally Johnson and Mullins show that a voided shaft could possibly save costs.
 
-Johnson and Mullins (2007) devised a mitigation concept which is to cast a continuous void through the centerline of the pier. This reduces the overall quantity of heat-generating concrete and provides a second surface through which to dissipate heat from the shaft into the environment. Their 3D numerical modeling shows voiding shafts is capable of keeping temperatures below the threshold for DEF concern. Their preliminary structural analysis shows that moment capacity would not be reduced significantly. Although axial capacity would be significantly reduced, this is not generally a concern for transmission line foundations. Additionally Johnson and Mullins show that a cost savings might be had by using the technique -- an added benefit.
+To further investigate the voided shaft idea, the Florida Department of Transportation (FDOT) sponsored a demonstration shaft, 9 feet in diameter with a 4-foot diameter central void (Mullins, Johnson, and Winters 2018). It used an FDOT Class IV concrete mixture ($f'_c = 4000\text{ psi}$) reinforced with 36 #9 bars and #5 stirrups. The demonstration shaft was successfully constructed and was found to reduce the peak concrete temperature below the threshold for DEF.
 
-To further investigate the voided shaft idea, the Florida Department of Transportation (FDOT) sponsored a demonstration shaft, 9 feet in diameter with a 4-foot diameter central void (Mullins, Johnson, and Winters 2018). It used an FDOT Class IV concrete mixture ($f'_c = 4000\text{ psi}$) reinforced with 36 #9 bars and #5 stirrups. The demonstration project validated the constructibility of the concept.
-
-    Methods of verification, testing. Things that a test may test: soil behavior, structural bending and shear resistance. Limits nt test configurations: may test soil well but does not impose the correct bending moment in the element. Power poles are weird,nt, moderate to high lateral forces, low axial load
+We will next look closer at structural design considerations for the voided shaft concept.
 
 # Structural Design
 
@@ -62,13 +62,7 @@ Confinement increase the strength of concrete and maximizes the strength contrib
 
 Liang, Beck, and Sritharan (2015) investigated single- and double-mats for the California Department of Transportation (CalTrans) and found that double mats are the most effective. However, this was for bridges which have a significant axial load and shear loads in earthquake-prone regions like California. For reptitive transmission structures without significant axial or shear load, the added expense of the second mat and cross-ties should be avoided if possible.
 
-Test results show that the single mat of bars near the outside face is liable to fail by buckling of the axial bars toward the inner void.
-
-Hollow columns with only one outer layer of reinforcement near the surface suffer from brittle failure when the inner face fails in compression.
-
-Double mats are effective at preventing the axial bars from buckling inward.
-
-The construction method employed in the Johnson and Mullins test shaft employed an inner permanent casing. Such a casing could prevent the axial bars from buckling inward, thereby increasing the potential axial and flexural capacity of the voided shaft. Inner steel tube confines axial bars (Han 2010).
+The construction method employed in the Johnson and Mullins test shaft employed an inner permanent casing. Such a casing can prevent the axial bars from buckling inward, thereby increasing the potential axial and flexural capacity of the voided shaft. Han, Yoon, and Kang (2010) tested the idea of using an internal steel tube and found that the internal tube did indeed result in triaxial confinement of the concrete.
 
 ## Structural Design Overview
 
@@ -84,11 +78,21 @@ $$A_{s,min} = 0.005 A_g = \dfrac{ \pi (D^2 - D_i^2) }{4} $$
 
 For combined axial and flexure $\phi$ depends on whether the section is classified as compression-controlled and tension-controlled. There is also a transition region between the two where $\phi$ varies linearly. For deformed bars, $\epsilon_{ty} = f_y/E_s = 0.00207$ for Grade 60 bars as assumed here.
 
-![Variation of with net tensile strain in extreme tension reinforcement](./images/compression-tension-controlled.png){ width=4in }
+![Variation of with net tensile strain in extreme tension reinforcement](./images/compression-tension-controlled.png){ width=3.5in }
+
+Strength is checked using an interaction diagram, sometimes referred to as a "P-M Diagram." Such a diagram is calculated by varying the strain distribution across the section, holding $\epsilon_c=0.003$. The value of $\phi$ is determined at every point on the diagram by categorizing the point as being compression-controlled, tension-controlled, or the transition region between the two. CRSI (2008) provides examples of such calculations. A computer program written in the Python programming language was to compute P-M diagrams for this paper. The program was validated against the manual example on pages 4-5 to 4-7 of the 2008 CRSI Handbook.
+
+![Validation of Python Program Using CRSI 2008 Example on p. 4-7](./images/python-validation.png){ width=5in }
+
+The longitudinal bars in a drilled shaft with internal casing are confined against buckling into the void (Han, Yoon, and Kang 2010). The longitudinal bars in the compression zone of column section will therefore contribute to the strength.
+
+The concrete shaft and its inner casing could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Seciton 4b). To qualify as an encased composite shape requires that the load transfer region be furnished with steel anchors. For transmission line structures, the added cost and labor to attach steel anchors to the inner casing would not be justified. Sufficient strength is achievable in the concrete section without designing it as a composite member.
 
 ## Shear and Torsion
 
-The ACI 318 code does not address hollow circular sections, so we must find another reference to calculate the shear capacity. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. The area of concrete effective in shear, $A_{cv}$ is equal to:
+The ACI 318 code does not address the shear capacity of hollow circular sections. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. ACI 371R does not state whether it assumes a two-mat with cross-tie reinforcing bar arrangement. It is assumed that even if this is the assumption the internal casing will provide sufficient confinement to justify using the ACI 371R shear capacity recommendations.
+
+The area of concrete effective in shear, $A_{cv}$ is equal to:
 
 $$A_{cv} = \left( 2 - \psi \right)b_v h$$
 
@@ -96,17 +100,9 @@ $$\psi = \dfrac{b_x}{b_v}$$
 
 $$b_v \leq 0.78D$$
 
-Where:
-
-$b_v$ is the length of the shell effective in shear in inches.
-
-$b_x$ is the length in inches of the shell at an opening.
-
-$h$ is the wall thickness in inches.
-
 We can simplify the equations by recognizing that transmission line structure drilled shafts will never have an opening, so $b_x = 0$, $\psi = 0$, and hence:
 
-$$A_{cv} = 2b_v h$$
+$$A_{cv} = 2b_v t$$
 
 The formula for nominal shear strength from Section 5.2.2.7.6 of ACI 371R is:
 
@@ -122,23 +118,48 @@ $$\boxed{V_n = 1.56 \sqrt{f'_c} D \left( D - D_i \right) }$$
 
 # Numerical Example
 
+To elaborate on the work of Johnson and Mullins (2007) we will look at a numerical example based upon the same shaft design as was constructed by the FDOT demonstration shaft (Mullins, Johnson, and Winters 2018).
+
+![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-plan.png){ width=4in }
+
+![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-elevation.png){ width=4in }
+
 ![FDOT Demonstration Shaft](./images/demo-shaft-voided.png){ width=4in }
 
 ![FDOT Demonstration Shaft vithout Void](./images/demo-shaft-unvoided.png){ width=4in }
 
-![FDOT Demonstration Shaft P-M Diagram](./images/demo-shaft-interaction.png){ width=5in }
+## Given
+
+{% set fc=4000.0 %}
+{% set fy=60000.0 %}
+{% set D=9.0*12.0 %}
+{% set Di=48.0 %}
+{% set beta1 = 0.85 %}
+{% set Ab=1.128 %}
+{% set n=36 %}
+{% set Ast = n*Ab %}
+
+1. Drilled shaft oustide diameter, $D = {{D|s}}$ in.
+
+1. Void diameter and internal liner outside diameter, $D_i = {{Di|s}}$ in.
+
+1. Concrete compressive strength, $f'_c = {{fc|s}}$ psi.
+
+1. Steel yield stress, $f_y ={{fy|s}}$ psi; therefore, $\beta_1 = 0.85$.
+
+1. Longitudinal bars consist of 36-#9 bars, $A_{st} = 36 \times {{Ab|s}} = {{Ast|s}}\text{ in}^2$.
+
+1. Ties are #5
 
 ## Assumptions
 
 1. Drilled shaft is laterally restrained by soil and does not need to be designed in accordance with ACI 318 Chapter 10 per Section 13.4.3.1.
 
-1. Specified compressive strength of concrete $$ 3000\text{ psi} \leq f'\_c \leq 4000 \text{ psi} $$. $$\beta_1 = 0.85 $$
-
 1. Concrete is normal weight.
 
-1. ASTM A615, grade 60 deformed bars for ties and axial reinforcement: $$ f_y = 60000\text{ psi} $$.
+1. Internal casing confines bars against compression buckling.
 
-1. The inner tube behaves as a composite member.
+1. Internal casing does not behave in a composite manner.
 
 1. Structure is in Seismic Design Category A, B, or C.
 
@@ -148,13 +169,45 @@ $$t_{min} = D \sqrt{\dfrac{fy}{8E_s}} $$
 
 $P_n$ and $M_n$ are calculated in accorance with ACI 318 Section 21.2.
 
-The concrete shaft and its inner liner could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Seciton 4b). To qualify as an encased composite shape requires that the load transfer region be furnished with steel anchors. For transmission line structures, the added cost and labor to attach steel anchors to the inner liner would not be justified. Sufficient strength is achievable in the concrete section without designing it as a composite member.
-
-Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$.
-
 Transverse reinforcement is required to be provided for bars in axial compression. Section 25.7.2 provides the requirements. The two requirements that are likely to control drilled shaft foundations are that $s \leq 16d_b$ of the longitudinal bar and $s \leq 48d_b$ of the tie bar size.
 
 Additional ties at the top of the pier are required by ACI 318 Section 10.7.6.1.6. They shall be at least two #4 bars within the top 5 inches of the drilled shaft.
+
+## Load Combinations
+
+## Combined Axial and Flexure
+
+By ACI 318 definitionthe gross are of the drilled shaft excludes the void area:
+
+{% set Ag = 355.0/113.0*(D*D - Di*Di)/4.0 %}
+
+$$A_g = \dfrac{ \pi \left( D^2 - D_i^2 \right) }{4} = \dfrac{ \pi \left( {{D|s}}^2 - {{Di|s}}^2 \right) }{4} = {{Ag|s}}\text{ in}^2$$
+
+The maximum compressive strength for a tied columns according to ACI 318 Section 22.4.2:
+
+$$P_{n,max} = 0.80 \left[ 0.85 f'_c \left( A_g - A_{st} \right) + f_y A_{st}    \right]$$
+
+{% set Pnmax = 0.80*(0.85*fc*(Ag - Ast) + fy*Ast)/1000.0 %}
+
+{% set phiPnmax = 0.65*Pnmax %}
+
+$$P_{n,max} = 0.80 \left[ 0.85 \times {{fc|s}} \left( {{Ag|s}} - {{Ast|s}} \right) + {{fy|s}} \times {{Ast|s}}   \right] /1000 = {{Pnmax|s}}\text{ kips}$$
+
+$$\phi P_{n,max} = 0.65 \times {{Pnmax|s}} = {{phiPnmax|s}}\text{ kips}$$
+
+## Shear
+
+{% set Vn = 1.56*fc**(0.5)*D*(D- Di)/1000.0 %}
+{% set phiv = 0.75 %}
+{% set phiVn = phiv*Vn %}
+
+The nominal shear capacity of the demonstration shaft is:
+
+$$V_n = 1.56 \sqrt{ {{fc|s}}  } ({{D|s}})({{D|s}} - {{Di|s}})/1000 = {{Vn|s}}\text{ kips}$$
+
+$$\phi V_n = {{phiv|f}} \times {{Vn|s}} = {{phiVn|s}}\text{ kips}$$
+
+Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$.
 
 # Cost Comparison
 
@@ -165,6 +218,8 @@ Notation generally follows ACI conventions with deviations noted.
 $a$ = depth of rectangular (Whitney) stress block, in.
 
 $A_b$ = area of individual bar, $\text{in.}^2$.
+
+$A_{cv}$ = effective shear area of concrete $\text{in.}^2$ (deviation per ACI 371R-08.)
 
 $A_g$ = gross area of concrete section which excludes the void area, $\text{in.}^2$.
 
@@ -178,6 +233,10 @@ $A_t$ = area of one leg of a hoop, $\text{in.}^2$.
 
 $b$ = width of compression member, in.
 
+$b_v$ = length of effective shear wall circumference of shaft = $0.78D$ in. for transmission line structure foundations (deviation per ACI 371R-08.)
+
+$b_x$ = length of opening along circumference of shaft = 0 in. for transmission line structure foundations (deviation per ACI 371R-08.)
+
 $b_w$ = web width, in. Deviation: use $D$ for diameter of circular section.
 
 $c$ = distance from extreme compression fiber to neutral axis, in.
@@ -190,7 +249,7 @@ $d_b$ = diameter of bar, in.
 
 $D$ = outside diameter of concrete, in.
 
-$D_i$ = inside diameter of concrete = outside diameter of liner, in.
+$D_i$ = inside diameter of concrete = outside diameter of casing, in.
 
 $E_c$ = modulus of elasticity of concrete, psi.
 
@@ -255,6 +314,10 @@ American Concrete Institute, _Design and Construction of Drilled Piers_, ACI 336
 American Concrete Institute, _Guide for the Analysis, Design, and Construction of Elevated Concrete and Composite Steel-Concrete Water Storage Tanks_, ACI 371R-08, 2008.
 
 American Institute of Steel Construction, _Specification for Structural Steel Buildings_, AISC 360-10, June 22, 2010.
+
+Concrete Reinforcing Steel Institute, _CRSI Design Handbook_, CRSI, 2008.
+
+Florida Department of Transportation, _Structures Design Guidelines_, SDG, FDOT, Structures Manual Volume 1, January 2018.
 
 Han, T. H., Yoon, K. Y., & Kang, Y. J., "Compressive strength of circular hollow reinforced concrete confined by an internal steel tube," Construction and Building Materials, V. 24, No. 9, 2010, pp. 1690–1699.
 
