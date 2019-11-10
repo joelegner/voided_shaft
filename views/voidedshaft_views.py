@@ -18,7 +18,7 @@ def plot_voided_shaft(shaft):
 
 
 def plot_rebar(plt, shaft):
-    # Plot ties
+    # Plot hoops
     ties_circle = plt.Circle((0.0, 0.0), shaft.D/2 -
                              shaft.cover, fill=False, edgecolor='black')
     plt.gca().add_patch(ties_circle)
