@@ -6,29 +6,37 @@
 
 # Background
 
-Transmission structures are used to elevate electric power lines to a safe distance above ground. The height exposes them to wind, and the attached power lines exert lateral forces that have long moment arms up to 150 feet. The combined effects of the wires and wind is an overturning moment which is termed the _groundline moment_. The long moment arm and horizontal direction of load application results in foundation reactions with high moment, low axial load, and low to moderate shear load.
+Transmission structures are used to elevate electric power lines to a safe distance above ground. The height exposes them to wind, and the attached power lines exert lateral forces that have long moment arms up to 150 feet. The combined effects of the wires and wind is an overturning moment which is termed the _ground-line moment_. The long moment arm and horizontal direction of load application results in foundation reactions with high moment, low axial load, and low to moderate shear load.
 
-Transmission structures can consist of latticed towers, H-structures with two or three vertical poles connected at the top, and even imaginitive structures like the Mickey Mouse shaped Mickey Pylon near Walt Disney World in Orlando, Florida. But the most common type being installed in the United States today is the monopole. Monopoles can be constructed using concrete or steel. Concrete monopoles are installed by the age-old method of direct embedment into the soil, with optional concrete backfill. Steel monopoles can be directly buried, too; however, large steel monopoles that develop too high of a groundline moment for direct burial are built with drilled shaft foundations.
+Transmission structures can consist of latticed towers, H-structures with two or three vertical poles connected at the top, and even imaginative structures like the Mickey Mouse shaped Mickey Pylon near Walt Disney World in Orlando, Florida. But the most common type being installed in the United States today is the monopole. Monopoles can be constructed using concrete or steel. Concrete monopoles are installed by the age-old method of direct embedment into the soil, with optional concrete backfill. Steel monopoles can be directly buried, too; however, large steel monopoles that develop too high of a ground-line moment for direct burial are built with drilled shaft foundations.
 
-Drilled shafts are deep foundations constructed by drilling a circular hole with an auger and filling the hole with concrete. The shaft is usually reinforced with a cage of vertical bars and hoops. Anchor bolts are embedded in the top of the shaft to connect the tranmission line structure to it. Drilled shafts for transmission line structures typically range between about 2 and 10 feet in diameter (IEEE 2001). Even larger diameters have been constructed. The shaft proportions are usually governed by geotechnical soil capacity, but can also be dictated by the anchor bolt circle diameter and required edge distance.
+Drilled shafts are deep foundations constructed by drilling a circular hole with an auger and filling the hole with concrete. The shaft is usually reinforced with a cage of vertical bars and hoops. Anchor bolts are embedded in the top of the shaft to connect the transmission line structure to it. Drilled shafts for transmission line structures typically range between about 2 and 10 feet in diameter (IEEE 2001). Even larger diameters have been constructed. The shaft proportions are usually governed by geotechnical soil capacity, but can also be dictated by the anchor bolt circle diameter and required edge distance.
 
-Some drilled shaft designs become large enough in diameter that they must be treated as mass concrete. The Florida Department of Transportation (FDOT) requires that concrete be classified as mass concrete when the shaft exceeds 6 feet in diameter (FDOT 2018). Mass concrete carries with it the risk of a deleterious phenomenon called Delayed Ettringite Formation (DEF) that can cause severe cracking.
+Some drilled shaft designs become large enough in diameter that they must be treated as mass concrete. The American Concrete Institute (ACI) defines mass concrete as "any large volume of cast-in-place or precast concrete with dimensions large enough to require that measures be taken to cope with the generation of heat and attendant volume change so as to minimize cracking." The Florida Department of Transportation (FDOT) requires that drilled shafts be classified as mass concrete when the shaft exceeds 6 feet in diameter (FDOT 2018).
+
+Mass concrete carries with it the risk one or both of two of a deleterious phenomena: (1) differential temperature induced cracking often observed on the outside of the concrete element or (2) Delayed Ettringite Formation (DEF) which usually occurs near the core of the concrete element where the highest temperatures develop. DEF also causes cracking from expansion of the ettringite crystal formation.
+
+## Differential Temperature Limits
+
+Presently, most state agencies limit the differential temperature limit in curing concrete to 35$^\circ$F or 40$^\circ$F (FDOT 2018). This means that the core to edge temperature should not exceed this limit or risk of thermally induced tensile stresses will exceed the minimal tensile strength of concrete. Similar to compressive strength, the tensile strength is also proportionally lower in early age concrete when the highest differential temperatures exist. This limit makes no distinction between large or small concrete elements, but is more of a concern in larger elements where higher core and differential temperatures are known to exist. Unfortunately, recent studies have shown the edge of a drilled shaft cast in soils can exhibit a temperature gradient on the order of 4$^\circ$F to 5$^\circ$F/in. Therefore a typical 6in cover of even a small or moderately sized shaft can have a 30$^\circ$F differential and the cage to core temperature can easily exceed the remaining allowable temperature range of 5$^\circ$F to 10$^\circ$F.
 
 ## Delayed Ettringite Formation (DEF)
 
-DEF is a process by which the mineral ettringite forms expansively in the hardened concrete matrix and cracks the shaft. High hydration temperatures destroy the ettringite that forms normally early in the curing process (Mindess and Young 2002). When the temperature finally falls below a threshold level, and if moisture is present, the ettringite re-forms in an expansive reaction. This causes tensile stresses that crack the hardened concrete. The threshold temperature is still a matter of debate. Values range from about 160$^\circ$F (Mindess and Young) to 180$^\circ$F (FDOT).
+Ettringite is a mineral that normally forms in the early stages of concrete hydration due to the addition of gypsum or other calcium sulfate sources. The benefits of ettringite include improved strength, reduction of drying shrinkage and to to prevent flash setting. However, when high curing temperatures exist, ettringite formation is delayed or skipped altogether. This makes the concrete less durable and unable to protect the steel from chloride diffusion. When the temperature finally falls below a threshold level, and if moisture is present, the ettringite begins to form (delayed occurrence hence DEF) in an expansive reaction. This causes tensile stresses that crack the hardened concrete. The curing threshold temperature is still a matter of debate. Values range from about 160$^\circ$F (Mindess and Young) to 180$^\circ$F (FDOT).
 
-![Drilled shaft likely damaged by DEF (Author's Photo)](./images/cracked-shaft.jpg){ width=3.5in }
+In the power industry, it is typical to cast large diameter shafts with high early strength concrete that produce high core and differential temperatures. Figure 1 shows a shaft that exhibited severe cracking from one or both of the concerns above.
 
-The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections, specifying mix designs that develop lower heat of hydration, and batching concrete using ice. Reducing the cross-section works by reducing the amount of concrete producing heat. The other two methods tend to rely on retarding the hydration reaction to reduce the amount of heat produced.
+![Drilled shaft likely damaged by thermal induced cracking or DEF (Author's Photo)](./images/cracked-shaft.jpg){ width=3.5in }
+
+The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections, specifying mix designs that develop lower heat of hydration, and batching concrete using ice. Reducing the cross-section works by reducing the amount of concrete producing heat. Lower heat mixes can use lower cement contents or use replacement cementitious materials. Replacement materials still develop the same approximate amount of energy, but over a longer timeframe allowing the surrounding soils to dissipate the energy and minimize temperature rise. Use of ice water reduces the starting temperature which both slows the chemical reactions and reduces the peak temperature by the temperature offset caused by the ice.
 
 Since transmission line structure drilled shaft diameter size is usually dictated by either geotechnical or anchor bolt edge distance requirements, reducing the cross-section is rarely an option. The low heat of hydration techniques are also problematic, because methods that delay curing also extend the length of the project, delaying the in-service date and increasing project costs. It would be better to find a way to construct large drilled shafts using conventional concrete without running the risk of DEF.
 
 ## Voided Shafts for Temperature Control
 
-Johnson and Mullins (2007) devised a mitigation concept they term "voided shaft" which is to cast a continuous void through the centerline of the pier. This reduces the overall quantity of heat-producing concrete and provides a second surface by which to dissipate heat from the shaft into the environment. Their 3D numerical modeling showed in theory that the method is capable of keeping temperatures below the threshold for DEF concern. Preliminary structural analysis showed that moment capacity would not be reduced significantly. Although axial capacity would be significantly reduced, this is not generally a concern for transmission line structure foundations. Additionally Johnson and Mullins showed that a voided shaft even has the potential to reduce costs.
+Johnson and Mullins (2007) devised a mitigation concept they termed "voided shaft" which is to cast a continuous void through the centerline of the pier. This reduces the overall quantity of heat-producing concrete and provides a second surface by which to dissipate heat from the shaft into the environment. Their 3D numerical modeling showed in theory that the method is capable of keeping temperatures below the threshold for DEF concern. Preliminary structural analysis showed that moment capacity would not be reduced significantly. Although axial capacity would be significantly reduced, this is not generally a concern for transmission line structure foundations. Additionally Johnson and Mullins showed that a voided shaft even has the potential to reduce costs.
 
-To further investigate the voided shaft idea, FDOT sponsored a demonstration shaft, 9 feet in diameter with a 4-foot diameter central void (Mullins, Johnson, and Winters 2018). It used an FDOT Class IV concrete mixture ($f'_c = 4000\text{ psi}$) and was reinforced with 36-#9 bars and #5 hoops. The demonstration shaft was successfully constructed and was found to reduce the peak concrete temperature below the threshold for DEF.
+To further investigate the voided shaft idea, FDOT sponsored a demonstration shaft, 9 feet in diameter with a 4-foot diameter central void (Mullins, Johnson, and Winters 2018). It used an FDOT Class IV concrete mixture ($f'_c = 4000\text{ psi}$) and was reinforced with 36-#9 bars and #5 hoops. The demonstration shaft was successfully constructed and was found to reduce the peak concrete temperature below the threshold for DEF or differential temperatures.
 
 We will next look closer at structural design considerations for the voided shaft concept.
 
@@ -92,7 +100,7 @@ Strength is checked using an interaction diagram, sometimes referred to as a "P-
 
 The longitudinal bars in a drilled shaft with internal casing are confined against buckling into the void (Han, Yoon, and Kang 2010). The longitudinal bars in the compression zone of column section will therefore contribute to the strength.
 
-The concrete shaft and its interior casing could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Seciton 4b). To qualify as an encased composite shape requires that the load transfer region be furnished with steel anchors. For transmission line structures, the added cost and labor to attach steel anchors to the interior casing would not be justified. Sufficient strength is achievable in the concrete section without designing it as a composite member. Future research might explore this concept further.
+The concrete shaft and its interior casing could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Section 4b). To qualify as an encased composite shape requires that the load transfer region be furnished with steel anchors. For transmission line structures, the added cost and labor to attach steel anchors to the interior casing would not be justified. Sufficient strength is achievable in the concrete section without designing it as a composite member. Future research might explore this concept further.
 
 ## Shear and Torsion
 
@@ -147,7 +155,7 @@ To elaborate on the work of Johnson and Mullins (2007) we will look at a numeric
 {% set Ast = n*Ab %}
 {% set s = 12.0 %}
 
-1. Drilled shaft oustide diameter, $D = {{D|s}}$ in.
+1. Drilled shaft outside diameter, $D = {{D|s}}$ in.
 
 1. Drilled shaft inside diameter (internal liner outside diameter), $D_i = {{Di|s}}$ in.
 
@@ -220,7 +228,7 @@ The _factored_ loads applied to the foundation were provided by the monopole str
 {% set Pu=30.0 %}
 
 -   Shear force, $V_u = {{Vu|s}}$ kips.
--   Applied groundline moment, $M_g = {{Mg|s}}$ kip-ft.
+-   Applied ground-line moment, $M_g = {{Mg|s}}$ kip-ft.
 -   Maximum moment in the shaft, $M_u = {{Mu|s}}$ kip-ft at a depth of {{z|s}} ft below the ground surface per LPile analysis.
 -   Vertical download load, $P_u = {{Pu|s}}$ kips.
 
@@ -233,7 +241,7 @@ To check combined axial load and flexure in accordance with ACI 318 Section 10.4
 
 ![Real-World Load Combination on FDOT Demonstration Shaft Interaction Diagram](./images/real-world-demo-shaft-interaction.png){ width=5in }
 
-The load combination falls within the interaction envelope of the voided shaft foundation. This means the voided shaft concept can feasibly safely support a real-world transmission line structure, further validating the concept.
+The load combination falls within the interaction envelope of the voided shaft foundation. This means the voided shaft concept is feasible and can safely support a real-world transmission line structure, further validating the concept.
 
 # Structural Capacity Testing (TODO)
 
@@ -338,6 +346,8 @@ $\psi$ = factor from ACI 371R-08 effective shear area formula.
 # References
 
 American Concrete Institute, _Building Code Requirements for Structural Concrete_, ACI 318-14, 2014.
+
+American Concrete Institute, _Guide to Mass Concrete_, 207.1R-05 (Reapproved 2012), Report of ACI Committee 207, Farmington Hills, MI., 2012.
 
 American Concrete Institute, _Design and Construction of Drilled Piers_, ACI 336-93 (Reapproved 2006), 1993.
 
