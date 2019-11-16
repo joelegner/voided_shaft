@@ -1,9 +1,3 @@
-% Voided Shafts for Transmission Line Foundations -- Feasibility Study
-% Joe Legner, P.E., S.E.[^1]
-% November 10, 2019
-
-[^1]: Author is licensed as a Structural Engineer in Illinois and a Professional Engineer in both Florida and Massachusetts.
-
 # Background
 
 Transmission structures are used to elevate electric power lines to a safe distance above ground. The height exposes them to wind, and the attached power lines exert lateral forces that have long moment arms up to 150 feet. The combined effects of the wires and wind is an overturning moment which is termed the _ground-line moment_. The long moment arm and horizontal direction of load application results in foundation reactions with high moment, low axial load, and low to moderate shear load.
@@ -24,9 +18,9 @@ Presently, most state agencies limit the differential temperature limit in curin
 
 Ettringite is a mineral that normally forms in the early stages of concrete hydration due to the addition of gypsum or other calcium sulfate sources. The benefits of ettringite include improved strength, reduction of drying shrinkage and to to prevent flash setting. However, when high curing temperatures exist, ettringite formation is delayed or skipped altogether. This makes the concrete less durable and unable to protect the steel from chloride diffusion. When the temperature finally falls below a threshold level, and if moisture is present, the ettringite begins to form (delayed occurrence hence DEF) in an expansive reaction. This causes tensile stresses that crack the hardened concrete. The curing threshold temperature is still a matter of debate. Values range from about 160$^\circ$F (Mindess and Young) to 180$^\circ$F (FDOT).
 
-In the power industry, it is typical to cast large diameter shafts with high early strength concrete that produce high core and differential temperatures. Figure 1 shows a shaft that exhibited severe cracking from one or both of the concerns above.
+In the power industry, it is typical to cast large diameter shafts with high early strength concrete that produce high core and differential temperatures. This is done to minimize project durations and cost. Figure @fig:1 shows a shaft that exhibited severe cracking from one or both of the concerns above.
 
-![Drilled shaft likely damaged by thermal induced cracking or DEF (Author's Photo)](./images/cracked-shaft.jpg){ width=3.5in }
+![Drilled shaft likely damaged by thermal induced cracking or DEF (Author's Photo)](./images/cracked-shaft.jpg){#fig:1 width=3.5in }
 
 The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections, specifying mix designs that develop lower heat of hydration, and batching concrete using ice. Reducing the cross-section works by reducing the amount of concrete producing heat. Lower heat mixes can use lower cement contents or use replacement cementitious materials. Replacement materials still develop the same approximate amount of energy, but over a longer timeframe allowing the surrounding soils to dissipate the energy and minimize temperature rise. Use of ice water reduces the starting temperature which both slows the chemical reactions and reduces the peak temperature by the temperature offset caused by the ice.
 
@@ -90,39 +84,78 @@ $$A_g = \dfrac{ \pi (D^2 - D_i^2) }{4} $$
 
 Transverse reinforcement (hoops) is required to be provided for bars in axial compression, and Section 25.7.2 provides the requirements. The two requirements that are likely to control drilled shaft foundations are that $s \leq 16d_b$ of the longitudinal bar and $s \leq 48d_b$ of the tie bar size. Additional hoops at the top of the pier are required by ACI 318 Section 10.7.6.1.6. They shall be at least two #4 bars within the top 5 inches of the drilled shaft.
 
-For combined axial and flexure $\phi$ depends on whether the section is classified as compression-controlled and tension-controlled. There is also a transition region between the two where $\phi$ varies linearly. For deformed bars, $\epsilon_{ty} = f_y/E_s = 0.00207$ for Grade 60 bars as assumed here.
+For combined axial and flexure $\phi$ depends on whether the section is classified as compression-controlled and tension-controlled. There is also a transition region between the two where $\phi$ varies linearly. For deformed bars, $\epsilon_{ty} = f_y/E_s = 0.00207$ for Grade 60 bars as assumed here. See Figure @fig:2.
 
-![Variation of with net tensile strain in extreme tension reinforcement](./images/compression-tension-controlled.png){ width=3.5in }
+![Variation of $\phi$ with Net Tensile Strain in Extreme Tension Reinforcement](./images/compression-tension-controlled.png){#fig:2 width=3.5in }
 
-Strength is checked using an interaction diagram, sometimes referred to as a "P-M Diagram." Such a diagram is calculated by varying the strain distribution across the section, holding $\epsilon_c=0.003$. The value of $\phi$ is determined at every point on the diagram by categorizing the point as being compression-controlled, tension-controlled, or the transition region between the two. CRSI (2008) provides examples of such calculations. A computer program written in the Python programming language was used to compute P-M diagrams for this paper. The program was validated against the manual example on pages 4-5 to 4-7 of the 2008 CRSI Handbook.
+Strength is checked using an interaction diagram, sometimes referred to as a "P-M Diagram." Such a diagram is calculated by varying the strain distribution across the section, holding $\epsilon_c=0.003$. The value of $\phi$ is determined at every point on the diagram by categorizing the point as being compression-controlled, tension-controlled, or the transition region between the two. CRSI (2008) provides examples of such calculations. A computer program written in the Python programming language was used to compute P-M diagrams for this paper. The program was validated against the manual example on pages 4-5 to 4-7 of the 2008 CRSI Handbook. The interaction diagram showing the validation is given in Figure @fig:3.
 
-![Validation of Python Program Using CRSI 2008 Example on p. 4-7](./images/python-validation.png){ width=5in }
+![Validation of Python Program Using CRSI 2008 Example on p. 4-7](./images/python-validation.png){#fig:3 width=5in }
 
 The longitudinal bars in a drilled shaft with internal casing are confined against buckling into the void (Han, Yoon, and Kang 2010). The longitudinal bars in the compression zone of column section will therefore contribute to the strength.
 
-The concrete shaft and its interior casing could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Section 4b). To qualify as an encased composite shape requires that the load transfer region be furnished with steel anchors. For transmission line structures, the added cost and labor to attach steel anchors to the interior casing would not be justified. Sufficient strength is achievable in the concrete section without designing it as a composite member. Future research might explore this concept further.
+## Composite Behavior
+
+The concrete shaft and its interior casing could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Section 4b).
+
+AISC Section I6.2 provides requirements for force allocation between the steel shape and the concrete encasement. For transmission line structure foundations, the load is applied to the concrete encasement, not the internal liner. AISC Section I6.2b provides the requirement for this transfer. $\phi_v = 0.65$ for shear connectors per AISC Section I8.3a.
+
+$$V_r' = P_r \left( f_{yc} A_{sc} / P_{no} \right)$$
+
+$$P_{no} = f_{yc} A_{sc} + f_y A_s + 0.85 f'_c A_g$$
+
+The available shear strength of headed studs is given by AISC Section I8.3a. Assume that the anchor edge distance is sufficient that concrete breakout is not a limiting factor.
+
+$$Q_{nv} = F_u A_{sa}$$
+
+AISC provides other requirements for encased composite shapes:
+
+1. $3 \leq f'_c \leq 10\text{ ksi}$ for normal-weight concrete per AISC Section I1.3(1).
+
+1. $f_y \leq 75000\text{ psi}$ per AISC Section I1.3(2).
+
+1. $A_{sc} \geq 0.01 \left(A_g + A_{sc} \right)$ per AISC Section I2.1a(1).
+
+1. The minimum transverse reinforcement shall consist of either #3 at 12 inches on center maximum or #4 at 16 inches on center maximum per AISC Section I2.1a(2).
+
+1. $A_s \geq 0.004\left( A_g + A_{sc} \right)$ per AISC Section I2.1a(2).
+
+{% set fy = 60.0 %}
+{% set fyc = 36.0 %}
+{% set fc = 4.0 %}
+{% set Asc = 93.0 %}
+{% set D=108.0 %}
+{% set Di=48.0 %}
+{% set Ag=355.0/113.0*(D**2 - Di**2)/4 %}
+{% set As = 0.004*(Asc + Ag) %}
+{% set Pno1 = fyc*Asc + fy*As + 0.85*fc*Ag %}
+{% set Pno2 = fy*As + 0.85*fc*Ag %}
+{% set ratio = Pno1/Pno2 %}
+
+Little research has been done on encasing round circular steel sections in concrete. The AISC specification and commentary discusses encased open shapes like wide flanges and filled closed shapes like round and rectangular HSS shapes. The potential benefit for adding shear studs to the proposed voided shaft would be to increase the axial load capacity and flexural capacity. Assuming we provide a casing that is 1% of the composite member, the potential benefit of including shear studs can be calculated if we also assume $f'_c = 4000\text{ psi}$, $f_y = 60000\text{ psi}$, and $f_{yc} = 36\text{ ksi}$. Let us consider $D$ = {{D|i}} inches and $D_i$ = {{Di|i}} inches. A 5/8-inch thick internal steel liner has an area of {{Asc|s}}$\text{ in}^2$ which is 1% of the total composite area. Use the $P_{no}$ formula for a rough approximation of the strength increase by incorporating composite action into the design.
+
+$$A_s = 0.004 \left( A_g + A_{sc} \right) = {{As|s}}\text{ in}^2$$
+
+With composite action (stress units converted from psi to ksi):
+
+$$P_{no} = {{fyc|s}} \times {{Asc|s}}  + {{fy}} \times {{As|s}} + 0.85 \times {{fc|s}} \times {{Ag|s}}= {{Pno1|s}}\text{ kips}$$
+
+Without composite action:
+$$P_{no} = 0 + {{fy}} \times {{As|s}} + 0.85 \times {{fc|s}} \times {{Ag|s}}= {{Pno2|s}}\text{ kips}$$
+
+The potential increase in axial capacity using an economical interior liner that is 1% of the total composite section area is ${{Pno1|s}}/{{Pno2|s}} = {{ratio|f}}$. For transmission line structures with low axial load relative to moment, this level of axial strength increase would not likely justify the labor and materials to add shear connectors to the internal liner.
 
 ## Shear and Torsion
 
 The ACI 318 code does not address the shear capacity of hollow circular sections. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. ACI 371R does not state whether it assumes a two-mat with cross-tie reinforcing bar arrangement. It is assumed that even if this is the assumption, the internal casing will provide sufficient confinement to justify using the ACI 371R shear capacity recommendations.
 
-If we consider the water tower pedestals to be sufficiently similar to the hollow drilled shaft foundations, we can use ACI 371R to calculate the area of concrete effective in shear, $A_{cv}$:
+If we consider the water tower pedestals to be sufficiently similar to the hollow drilled shaft foundations, we can use ACI 371R to calculate the area of concrete effective in shear, $A_{cv}$, depicted in Figure @fig:4.
 
-$$A_{cv} = \left( 2 - \psi \right)b_v t$$
-
-$$\psi = \dfrac{b_x}{b_v}$$
-
-$$b_v \leq 0.78D$$
-
-![Effective Shear Area from ACI 371R](./images/effective-shear-area.png){ width=6in }
+![Effective Shear Area from ACI 371R](./images/effective-shear-area.png){#fig:4 width=6in }
 
 We can simplify the equations by recognizing that transmission line structure drilled shafts will never have an opening, so $b_x = 0$, $\psi = 0$, and hence:
 
-$$A_{cv} = 2b_v t$$
-
 The formula for nominal shear strength from Section 5.2.2.7.6 of ACI 371R is:
-
-$$V_n = \left( a_c \sqrt{f'_c} + \rho_h f_y \right)A_{cv}$$
 
 $$a_c = 6 - \dfrac{2.5M_u}{V_u d_w}$$
 
@@ -137,11 +170,11 @@ For shear, $\phi = 0.75$.
 
 # Numerical Example
 
-To elaborate on the work of Johnson and Mullins (2007) we will look at a numerical example based on the same shaft design that was constructed by FDOT (Mullins, Johnson, and Winters 2018). It is referred to herein as the "FDOT Demonstration Shaft."
+To elaborate on the work of Johnson and Mullins (2007) we will look at a numerical example based on the same shaft design that was constructed by FDOT (Mullins, Johnson, and Winters 2018). It is referred to herein as the "FDOT Demonstration Shaft." The shaft dimensions and reinforcement are shown in Figures @fig:5 and @fig:6.
 
-![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-plan.png){ width=4in }
+![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-plan.png){#fig:5 width=4in }
 
-![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-elevation.png){ width=5in }
+![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-elevation.png){#fig:6 width=5in }
 
 ## Given
 
@@ -203,9 +236,9 @@ $$\phi V_n = {{phiv|f}} \times {{Vn|s}} = {{phiVn|s}}\text{ kips}$$
 
 Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$.
 
-Interaction diagram produced by Python computer program:
+Interaction diagram produced by Python computer program is shown in Figure @fig:7.
 
-![FDOT Demonstration Shaft Interaction Diagram](./images/demo-shaft-interaction.png){ width=5in }
+![FDOT Demonstration Shaft Interaction Diagram](./images/demo-shaft-interaction.png){#fig:7 width=5in}
 
 ## Comparison to Real-World Design
 
@@ -215,9 +248,9 @@ Interaction diagram produced by Python computer program:
 {% set Ast = n*Ab %}
 {% set Ast_increase = 100.0*(Ast - fdot_Ast)/fdot_Ast %}
 
-We will now compare the capacity of the FDOT Demonstration Shaft to a real-world transmission line structure. The subject structure is being constructed by the local regulated electric utility in Apollo Beach, Florida as part of a transmission line project. The structure's anchor bolt cage has a bolt circle diameter of 7 feet. The foundation engineer selected a shaft diameter of 9 feet to provide an adequate anchor bolt edge distance. This is coincidentally the same shaft diameter as the FDOT Demonstration Shaft. Reinforcement of the real-world shaft is 30-#11 bars, so $A_{st} = {{n}} \times {{Ab|s}} = {{Ast|s}}\text{ in}^2$ or {{Ast_increase|i}}% greater than the FDOT Demonstration Shaft. The reason is that $A_g$ for the solid shaft exceeds $A_g$ for the voided shaft.
+We will now compare the capacity of the FDOT Demonstration Shaft to a real-world transmission line structure. The subject structure is being constructed by the local regulated electric utility in Apollo Beach, Florida as part of a transmission line project. The structure's anchor bolt cage has a bolt circle diameter of 7 feet. It is shown in Figure @fig:8. The foundation engineer selected a shaft diameter of 9 feet to provide an adequate anchor bolt edge distance. This is coincidentally the same shaft diameter as the FDOT Demonstration Shaft. Reinforcement of the real-world shaft is 30-#11 bars, so $A_{st} = {{n}} \times {{Ab|s}} = {{Ast|s}}\text{ in}^2$ or {{Ast_increase|i}}% greater than the FDOT Demonstration Shaft. The reason is that $A_g$ for the solid shaft exceeds $A_g$ for the voided shaft.
 
-![Real-World Anchor Bolt Cage (Author's Photo)](./images/real-world-anchor-bolt-cage.jpg){ width=5in }
+![Real-World Anchor Bolt Cage (Author's Photo)](./images/real-world-anchor-bolt-cage.jpg){#fig:8 width=5in}
 
 The _factored_ loads applied to the foundation were provided by the monopole structure design engineer:
 
@@ -227,19 +260,19 @@ The _factored_ loads applied to the foundation were provided by the monopole str
 {% set z=5.1 %}
 {% set Pu=30.0 %}
 
--   Shear force, $V_u = {{Vu|s}}$ kips.
--   Applied ground-line moment, $M_g = {{Mg|s}}$ kip-ft.
--   Maximum moment in the shaft, $M_u = {{Mu|s}}$ kip-ft at a depth of {{z|s}} ft below the ground surface per LPile analysis.
--   Vertical download load, $P_u = {{Pu|s}}$ kips.
+- Shear force, $V_u = {{Vu|s}}$ kips.
+- Applied ground-line moment, $M_g = {{Mg|s}}$ kip-ft.
+- Maximum moment in the shaft, $M_u = {{Mu|s}}$ kip-ft at a depth of {{z|s}} ft below the ground surface per LPile analysis.
+- Vertical download load, $P_u = {{Pu|s}}$ kips.
 
 First, we will check shear:
 $$\phi V_n = {{phiVn|s}} > {{Vu|s}}\text{ kips - OK}$$
 
 No shear reinforcement is required.
 
-To check combined axial load and flexure in accordance with ACI 318 Section 10.4.2.1, we will plot the point ($M_u$, $P_u$) on the voided shaft's interaction diagram: ({{Mu|s}}, {{Pu|s}}).
+To check combined axial load and flexure in accordance with ACI 318 Section 10.4.2.1, we ($M_u$, $P_u$) on the voided shaft's interaction diagram: ({{Mu|s}}, {{Pu|s}}). The resulting diagram is given as Figure @fig:9.
 
-![Real-World Load Combination on FDOT Demonstration Shaft Interaction Diagram](./images/real-world-demo-shaft-interaction.png){ width=5in }
+![Real-World Load Combination on FDOT Demonstration Shaft Interaction Diagram](./images/real-world-demo-shaft-interaction.png){#fig:9 width=5in}
 
 The load combination falls within the interaction envelope of the voided shaft foundation. This means the voided shaft concept is feasible and can safely support a real-world transmission line structure, further validating the concept.
 
@@ -264,6 +297,10 @@ $A_g$ = gross area of concrete section which excludes the void area, $\text{in.}
 $A_s$ = area of nonprestressed longitudinal reinforcement, $\text{in.}^2$.
 
 $A_s'$ = area of compression reinforcement, $\text{in.}^2$.
+
+$A_{sa}$ = area of one steel stud anchor for composite behavior, $\text{in.}^2$.
+
+$A_{sc}$ = cross-sectional area of steel casing, $\text{in.}^2$.
 
 $A_{s,min}$ = minimum area of reinforcement, $\text{in.}^2$.
 
@@ -297,7 +334,11 @@ $\sqrt{f'_c}$ = square root of specified compressive strength of concrete, psi.
 
 $f_y$ = yield strength for nonprestressed reinforcement, psi.
 
+$f_{ys}$ = yield strength of interior steel casing, ksi.
+
 $f_{yt}$ = yield strength for nonprestressed reinforcement hoops, psi.
+
+$F_u$ = ultimate strength of headed stud anchors, ksi.
 
 $M_n$ = nominal flexural strength at section, kip-ft.
 
@@ -307,7 +348,15 @@ $n$ = number of items such as longitudinal reinforcing bars.
 
 $P_n$ = nominal axial compressive strength of member, kips.
 
+$P_{no}$ = nominal axial compressive strength without consideration of length effects, determined by AISC 360-10 Equation I2-4 for encased composite members, kips.
+
+$P_r$ = required axial force applied to composite member, kips.
+
 $P_u$ = factored axial force to be taken as positive for compression and negative for tension, kips.
+
+$Q_{nv}$ = sum of available shear strengths of shear connectors between concrete and interior steel casing within the load introduction length, kips.
+
+$R_c$ = force transferred by shear connectors to interior steel casing acting compositely, kips.
 
 $s$ = center to center spacing of items such as hoops, in.
 
@@ -324,6 +373,8 @@ $T_u$ = factored torsion force at section, kips.
 $V_c$ = nominal shear strength provided by concrete, kips.
 
 $V_n$ = nominal shear strength provided by section, kips.
+
+$V_r$ = force required to be transferred to encased steel shape by shear connectors, kips.
 
 $V_s$ = nominal shear strength provided by steel, kips.
 
