@@ -4,6 +4,7 @@ from leglib.structural.acibars import bars
 from leglib.structural.concrete import Concrete
 from leglib.structural.acibars import a615_grade60
 import math
+import copy
 
 
 class VoidedShaft(DrilledShaft):
@@ -21,7 +22,15 @@ class VoidedShaft(DrilledShaft):
         self.cover = 6.0
         self.concrete = Concrete(4000.0)
         self.steel = a615_grade60
-        self.c = 1.0
+        self._c = 1.0
+
+    @property
+    def c(self):
+        return self._c
+
+    @c.setter
+    def c(self, value):
+        self._c = value
 
     def __str__(self):
         return "%d inch diameter drilled shaft with %d inch diameter void" % (self.D, self.Di)
@@ -114,7 +123,15 @@ class VoidedShaft(DrilledShaft):
 
     # Methods for the net combined section: gross minus void space
     def Ac(self):
+        "Area of concrete in compression, below y=a"
         return self.Ac_0() - self.Ac_i()
+
+    def At(self):
+        "Area of concrete in tension, below y=a"
+        _opposite = copy.deepcopy(self)
+        _opposite.c = (self.D - self.c*self.concrete.beta1()) / \
+            self.concrete.beta1()
+        return _opposite.Ac()
 
     def ybar(self):
         Ac0 = self.Ac_0()
@@ -122,3 +139,10 @@ class VoidedShaft(DrilledShaft):
         y0 = self.ybar_0()
         yi = self.ybar_i()
         return (Ac0*y0 - Aci*yi)/(Ac0 - Aci)
+
+    def ybar_t(self):
+        "Location of centroid for tension zone"
+        _opposite = copy.deepcopy(self)
+        _opposite.c = (self.D - self.c*self.concrete.beta1()) / \
+            self.concrete.beta1()
+        return _opposite.ybar()

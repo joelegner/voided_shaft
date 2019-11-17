@@ -6,6 +6,7 @@ from leglib.structural.acibars import bars
 from leglib.structural.concrete import Concrete
 from leglib.structural.acibars import a615_grade60
 import math
+import copy
 
 
 class TestVoidedShaft(unittest.TestCase):
@@ -36,6 +37,12 @@ class TestVoidedShaft(unittest.TestCase):
         # Net shape = solid with void area deducted
         self.assertAlmostEqual(self.test_shaft.Ac(), 92.50855906265963, 4)
         self.assertAlmostEqual(self.test_shaft.ybar(), 5.606506599388385, 4)
+
+        _opposite = copy.deepcopy(self.test_shaft)
+        _opposite.c = (self.test_shaft.D - self.test_shaft.c*self.test_shaft.concrete.beta1()) / \
+            self.test_shaft.concrete.beta1()
+        self.assertAlmostEqual(
+            self.test_shaft.ybar_t(), _opposite.ybar(), places=3)
 
 
 if __name__ == '__main__':

@@ -6,6 +6,7 @@ from leglib.structural.acibars import bars
 from leglib.structural.concrete import Concrete
 from leglib.structural.acibars import a615_grade60
 import math
+import copy
 
 
 class TestCompositeVoidedShaftSuperclass(unittest.TestCase):
@@ -37,6 +38,7 @@ class TestCompositeVoidedShaftSuperclass(unittest.TestCase):
         self.assertAlmostEqual(self.test_shaft.Ac(), 92.50855906265963, 4)
         self.assertAlmostEqual(self.test_shaft.ybar(), 5.606506599388385, 4)
 
+
 class TestCompositeVoidedShaftSuperclass(unittest.TestCase):
 
     def setUp(self):
@@ -55,7 +57,9 @@ class TestCompositeVoidedShaftSuperclass(unittest.TestCase):
         self.assertAlmostEqual(self.test_shaft.casing.Ag, 93.021, places=3)
         self.assertAlmostEqual(self.test_shaft.casing.a, 24.0, places=3)
         self.assertAlmostEqual(self.test_shaft.casing.Ac(), 46.510, places=3)
-
+        self.assertAlmostEqual(self.test_shaft.casing.At(), 46.510, places=3)
+        self.assertAlmostEqual(self.test_shaft.casing.ybar(), 15.081, places=3)
+        print(self.test_shaft.casing.ybar())
 
 
 if __name__ == '__main__':
