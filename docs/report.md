@@ -425,39 +425,3 @@ Liang, Xiao; Beck, Ryan and Sritharan, Sri, "Understanding the Confined Concrete
 Mindess, Sidney; Young, J. Francis; and Darwin, David, _Concrete_, Second Edition, Prentice Hall, 2002, p. 490.
 
 Mullins, G.; Johnson, Kevin R. and Winters, D., "Controlling Mass Concrete Effects in Large-Diameter Drilled Shafts Using Full-Length Central Void," _ACI Structural Journal_, American Concrete Institute, V. 115, No. 5, September 2018, pp. 1-10.
-
-# Appendix - Composite Flexure
-
-{% set D=108.0 %}
-{% set Di=48.0 %}
-{% set fc=4000.0 %}
-{% set fy=60000.0 %}
-{% set fyc=36000.0 %}
-{% set tc = 0.625 %}
-{% set Dc = Di %}
-{% set Dic = Dc - 2.0*tc %}
-
-## Assumptions
-
-1. Shaft $D = {{D|s}}$ inches, $D_i = {{Di|s}}$ inches, $f'_c = {{fc|i}}$ psi, $f_y = {{fy|i}}$ psi.
-
-1. Internal casing $t_c = {{tc|f3}}$ inches, $D_c = D_i = {{Dc|i}}$ inches, $D_{ic} = D_c - 2t_c = {{Dic|s}}$ inches, $f_{yc} = {{fyc|i}}$ psi.
-
-Calculate area:
-{% set R=Dc/2.0 %}
-{% set Ri=Dic/2.0 %}
-{% set Ag=355.0/113.0*(R**2 - Ri**2) %}
-{% set A=Ag/2.0 %}
-
-$$R = D_c/2 = {{R|f3}}\text{ in}$$
-$$R_i = D_{ic}/2 = {{Ri|f3}}\text{ in}$$
-$$A_g = \pi \left( R^2 - R_i^2 \right) = {{Ag|f3}}\text{ in}^2$$
-$$A = \dfrac{\pi}{2} \left( R^2 - R_i^2 \right) = {{A|f3}}\text{ in}^2$$
-
-Calculate location of neutral axis:
-{% set b=(R + Ri)/2.0 %}
-{% set yc=(2.0*b)/(355.0/113.0)*(1.0 + ((tc/b)**2)/12.0) %}
-
-$$b = (R + R_i)/2 = {{b|f3}}\text{ in}$$
-
-$$y_c = \dfrac{2b}{\pi} \left[  1 + \dfrac{(t_c/b)^2}{12}  \right] = {{yc|f3}}\text{ in}$$
