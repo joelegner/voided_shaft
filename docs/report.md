@@ -98,15 +98,15 @@ The longitudinal bars in a drilled shaft with internal casing are confined again
 
 The concrete shaft and its interior casing could be designed as a composite member to maximize the design capacity. ACI 318 Commentary Section R10.5.2.2 references the AISC Steel Construction Manual (2010) for composite sections. Chapter I of the AISC manual governs the design of composite members and provides design requirements for two kinds of composite columns: encased shapes (Section 4a) and filled composite members (Section 4b).
 
-AISC Section I6.2 provides requirements for force allocation between the steel shape and the concrete encasement. For transmission line structure foundations, the load is applied to the concrete encasement, not the internal liner. AISC Section I6.2b provides the requirement for this transfer. $\phi_v = 0.65$ for shear connectors per AISC Section I8.3a.
+AISC Section I6.2 provides requirements for force allocation between the steel shape and the concrete encasement. For transmission line structure foundations, the load is applied to the concrete encasement, not the internal liner. AISC Section I6.2b provides the requirement for this transfer. $\phi = 0.65$ for shear connectors per AISC Section I8.3a.
 
-$$V_r' = P_r \left( f_{yc} A_{sc} / P_{no} \right)$$
+$$V_r' = P_u \left( f_{yc} A_{sc} / P_{no} \right)$$
 
 $$P_{no} = f_{yc} A_{sc} + f_y A_s + 0.85 f'_c A_g$$
 
 The available shear strength of headed studs is given by AISC Section I8.3a. Assume that the anchor edge distance is sufficient that concrete breakout is not a limiting factor.
 
-$$Q_{nv} = F_u A_{sa}$$
+$$Q_{nv} = \sum F_{ua} A_{sa}$$
 
 AISC provides other requirements for encased composite shapes:
 
@@ -152,8 +152,6 @@ The ACI 318 code does not address the shear capacity of hollow circular sections
 If we consider the water tower pedestals to be sufficiently similar to the hollow drilled shaft foundations, we can use ACI 371R to calculate the area of concrete effective in shear, $A_{cv}$, depicted in Figure @fig:4.
 
 ![Effective Shear Area from ACI 371R](./images/effective-shear-area.png){#fig:4 width=6in }
-
-We can simplify the equations by recognizing that transmission line structure drilled shafts will never have an opening, so $b_x = 0$, $\psi = 0$, and hence:
 
 The formula for nominal shear strength from Section 5.2.2.7.6 of ACI 371R is:
 
@@ -288,6 +286,8 @@ The concept of using a hollow or "voided" drilled shaft foundation seems to be f
 
 $a$ = depth of rectangular (Whitney) stress block, in.
 
+$a_c$ =
+
 $A_b$ = area of individual bar, $\text{in.}^2$.
 
 $A_{cv}$ = effective shear area of concrete $\text{in.}^2$
@@ -307,10 +307,6 @@ $A_{s,min}$ = minimum area of reinforcement, $\text{in.}^2$.
 $A_t$ = area of one leg of a hoop, $\text{in.}^2$.
 
 $b$ = width of compression member, in.
-
-$b_v$ = length of effective shear wall circumference of shaft = $0.78D$ in. for transmission line structure foundations.
-
-$b_x$ = length of opening along circumference of shaft = 0 in. for transmission line structure foundations.
 
 $c$ = distance from extreme compression fiber to neutral axis, in.
 
@@ -334,11 +330,13 @@ $\sqrt{f'_c}$ = square root of specified compressive strength of concrete, psi.
 
 $f_y$ = yield strength for nonprestressed reinforcement, psi.
 
-$f_{ys}$ = yield strength of interior steel casing, ksi.
+$f_{yc}$ = yield strength of interior steel casing, ksi.
 
 $f_{yt}$ = yield strength for nonprestressed reinforcement hoops, psi.
 
-$F_u$ = ultimate strength of headed stud anchors, ksi.
+$F_{ua}$ = ultimate strength of headed stud anchors, ksi.
+
+$M_g$ = factored ground line moment reaction of the supported structure, kip-ft.
 
 $M_n$ = nominal flexural strength at section, kip-ft.
 
@@ -362,19 +360,11 @@ $s$ = center to center spacing of items such as hoops, in.
 
 $t$ = wall thickness of hollow section = $(D - D_i)/2$, in.
 
-$T_c$ = nominal torsion strength provided by concrete, kips.
-
-$T_n$ = nominal torsion strength provided by section, kips.
-
-$T_s$ = nominal torsion strength provided by steel, kips.
-
-$T_u$ = factored torsion force at section, kips.
-
 $V_c$ = nominal shear strength provided by concrete, kips.
 
 $V_n$ = nominal shear strength provided by section, kips.
 
-$V_r$ = force required to be transferred to encased steel shape by shear connectors, kips.
+$V_r'$ = force required to be transferred to encased steel shape by shear connectors, kips.
 
 $V_s$ = nominal shear strength provided by steel, kips.
 
@@ -382,11 +372,15 @@ $V_u$ = factored shear force at section, kips.
 
 $\beta_1$ = factor relating depth of equivalent rectangular compressive stress block to depth of neutral axis.
 
+$\epsilon_c$ = compressive strain in concrete at failure, assumed to be 0.003.
+
 $\epsilon_t$ = net tensile strain in extreme layer of longitudinal tension reinforcement at nominal strength.
 
 $\epsilon_{ty}$ = value of net tensile strain in the extreme layer of longitudinal tension reinforcement used to define a compression-controlled section.
 
 $\rho$ = ratio of longitudinal steel $A_s$ to $bd$.
+
+$\rho_h$ = reinforcing ratio of transverse hoop steel.
 
 $\rho_h$ = ratio of hoops $A_{st}$ to $bd$.
 
