@@ -100,7 +100,7 @@ The concrete shaft and its interior casing could be designed as a composite memb
 
 AISC Section I6.2 provides requirements for force allocation between the steel shape and the concrete encasement. For transmission line structure foundations, the load is applied to the concrete encasement, not the internal liner. AISC Section I6.2b provides the requirement for this transfer. $\phi = 0.65$ for shear connectors per AISC Section I8.3a.
 
-$$V_r' = P_u \left( f_{yc} A_{sc} / P_{no} \right)$$
+$$V_r' = P_u \left( f_{yc} A_{sc} \right)/ P_{no} $$
 
 $$P_{no} = f_{yc} A_{sc} + f_y A_s + 0.85 f'_c A_g$$
 
@@ -145,26 +145,43 @@ $$P_{no} = 0 + {{fy}} \times {{As|s}} + 0.85 \times {{fc|s}} \times {{Ag|s}}= {{
 
 The potential increase in axial capacity using an economical interior liner that is 1% of the total composite section area is ${{Pno1|s}}/{{Pno2|s}} = {{ratio|f}}$. For transmission line structures with low axial load relative to moment, this level of axial strength increase would not likely justify the labor and materials to add shear connectors to the internal liner.
 
-## Shear and Torsion
+## Shear
 
 The ACI 318 code does not address the shear capacity of hollow circular sections. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. ACI 371R does not state whether it assumes a two-mat with cross-tie reinforcing bar arrangement. It is assumed that even if this is the assumption, the internal casing will provide sufficient confinement to justify using the ACI 371R shear capacity recommendations.
 
-If we consider the water tower pedestals to be sufficiently similar to the hollow drilled shaft foundations, we can use ACI 371R to calculate the area of concrete effective in shear, $A_{cv}$, depicted in Figure @fig:4.
+If we consider the water tower pedestals to be sufficiently similar to the hollow drilled shaft foundations, we can use the equations from ACI 371R to calculate the area of concrete effective in shear, $A_{cv}$, depicted in Figure @fig:4.
 
 ![Effective Shear Area from ACI 371R](./images/effective-shear-area.png){#fig:4 width=6in }
 
+From Figure @fig:4, noting the symmetry of the 45-degree angles and the symmetry of the donut-shaped section and revising ACI 371R notation to match this paper, $A_{cv}$ simply becomes:
+
+$$A_{cv} = \dfrac{A_g}{4}$$
+
 The formula for nominal shear strength from Section 5.2.2.7.6 of ACI 371R is:
 
-$$a_c = 6 - \dfrac{2.5M_u}{V_u d_w}$$
+$$V_c = \left( \alpha_c \sqrt{f'_c} + \rho_h f_y  \right)A_{cv}$$
 
-Where $a_c$ is constrained to fall between 2 and 3:
-$$2 \leq a_c \leq 3$$
+Where:
 
-Neglecting the reinforcing ratio of the hoops, $\rho_h = 0$. We can also conservatively take $a_c$ to be the lower limit, $a_c = 2$ and let $t = (D - D_i)/2$, and $b_v = 0.78D$. Substituting all of these values into the formula for $V_n$ gives:
+$$\alpha = 6 - \dfrac{2.5M_u}{V_u D}$$
 
-$$\boxed{V_n = 3.12 \sqrt{f'_c} D \dfrac{\left( D - D_i \right)}{2}}$$
+Where $\alpha_c$ is constrained to fall between 2 and 3:
 
-For shear, $\phi = 0.75$.
+$$2 \leq \alpha_c \leq 3$$
+
+Neglecting the reinforcing ratio of the hoops, $\rho_h = 0$. We can also conservatively take $\alpha_c$ to be the lower limit, $\alpha_c = 2$. Substituting these into the formula for $V_n$ gives:
+
+$$\boxed{V_c = 3.12 \sqrt{f'_c} D \dfrac{\left( D - D_i \right)}{2}}$$
+
+Where $\phi = 0.75$ for shear.
+
+The code and literature are not clear on what the contribution of the hoop steel would be for a _hollow_ circular section. For a _solid_ section, the contribution is specified in ACI 318 Section 22.5.2.2 with $A_v$ equal to the area of two hoop bars and $d=0.8D$.
+
+$$V_s = \dfrac{A_v f_{yt} d}{s}$$
+
+$$\boxed{V_s = \dfrac{1.6 A_{bt} f_{yt} D}{s} }$$
+
+$$V_n = V_c + V_s$$
 
 # Numerical Example
 
@@ -210,6 +227,8 @@ To elaborate on the work of Johnson and Mullins (2007) we will look at a numeric
 
 1. Structure is in Seismic Design Category A, B, or C. (Seismic is beyond the scope of this paper.)
 
+1. Headed studs are 3/4-inch diameter in accordance with AWS D1.1. $A_{sa} = 0.44\text{ in}^2$ and $F_{ua} = 65\text{ ksi}$ for ASTM A108 material.
+
 ## Combined Axial and Flexure
 
 By ACI 318 definition, the gross are of the drilled shaft excludes the void area:
@@ -225,18 +244,53 @@ $$\phi P_{n,max} = 0.65 \times {{Pnmax|s}} = {{phiPnmax|s}}\text{ kips}$$
 
 ## Shear
 
-{% set Vn = 3.12*fc**(0.5)*D*(D- Di)/2.0/1000.0 %}
+{% set Vc = 3.12*fc**(0.5)*D*(D- Di)/2.0/1000.0 %}
 {% set phiv = 0.75 %}
-{% set phiVn = phiv*Vn %}
-The nominal shear capacity of the demonstration shaft is:
-$$V_n = 3.12 \sqrt{ {{fc|s}}  } ({{D|s}})\dfrac{({{D|s}} - {{Di|s}})}{2}/1000 = {{Vn|s}}\text{ kips}$$
-$$\phi V_n = {{phiv|f}} \times {{Vn|s}} = {{phiVn|s}}\text{ kips}$$
 
-Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$.
+The concrete shear capacity of the demonstration shaft is:
+$$V_c = 3.12 \sqrt{ {{fc|s}}  } ({{D|s}})\dfrac{({{D|s}} - {{Di|s}})}{2}/1000 = {{Vc|s}}\text{ kips}$$
+
+Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$. The contribution of the hoops can be calculated from ACI 318 Section 22.5.2.2.
+
+$$V_s = \dfrac{1.6 A_{bt} f_{yt} D}{s}$$
+
+{% set Abt = 0.31 %}
+{% set fyt=60000.0 %}
+{% set Vs=1.6*Abt*fyt*D/s/1000.0 %}
+{% set phiVn=phiv*(Vc + Vs) %}
+
+$$V_s = \dfrac{1.6 \times {{Abt|s}} \times {{fyt|s}} \times {{D|s}}}{1000 \times {{s|i}}}  = {{Vs|s}} \text{ kips}$$
+
+$$\phi V_n = \phi \left( V_c + V_s \right) = 0.75 \times \left( {{Vc|s}} + {{Vs|s}} \right) = {{phiVn|s}}\text{ kips}$$
 
 Interaction diagram produced by Python computer program is shown in Figure @fig:7.
 
 ![FDOT Demonstration Shaft Interaction Diagram](./images/demo-shaft-interaction.png){#fig:7 width=5in}
+
+## Composite Behavior
+
+{% set Pu=30.0 %}
+{% set fyc=36000.0 %}
+{% set Pno=fyc*Asc + fy*As + 0.85*fc*Ag %}
+{% set Vr=Pu*(fyc*Asc/Pno) %}
+Calculate the required shear force using $P_u = {{Pu|s}}$ kips.
+
+$$P_{no} = {{fyc|s}} \times {{Asc|s}} + {{fy|s}} \times {{As|s}} + 0.85 \times {{fc|i}} \times {{Ag|s}} = {{Pno|s}}\text{ kips}$$
+
+$$V_r' = {{Pu|s}} \left( {{fyc|s}} \times {{Asc|s}} \right) / {{Pno|s}} = {{Vr|s}} \text{ kips}$$
+
+{% set Fua = 65.0 %}
+{% set Asa = 0.44 %}
+{% set Qnv = Fua*Asa %}
+The strength of a shear stud is:
+$$Q_{nv} = {{Fua|s}} \times {{Asa|s}} = {{Qnv|s}}\text{ kips}$$
+
+{% set n=Vr/Qnv|int + 1 %}
+
+Calculate the required number of shear connectors:
+$$n = \dfrac{ {{Vr|s}}}{ {{Qnv|s}}} = {{n|i}}$$
+
+The axial load of $P_u = {{Pu|s}}$ kips is too low relative to the strength of the noncomposite column for it to be worth using composite action.
 
 ## Comparison to Real-World Design
 
@@ -266,15 +320,11 @@ The _factored_ loads applied to the foundation were provided by the monopole str
 First, we will check shear:
 $$\phi V_n = {{phiVn|s}} > {{Vu|s}}\text{ kips - OK}$$
 
-No shear reinforcement is required.
-
 To check combined axial load and flexure in accordance with ACI 318 Section 10.4.2.1, we ($M_u$, $P_u$) on the voided shaft's interaction diagram: ({{Mu|s}}, {{Pu|s}}). The resulting diagram is given as Figure @fig:9.
 
 ![Real-World Load Combination on FDOT Demonstration Shaft Interaction Diagram](./images/real-world-demo-shaft-interaction.png){#fig:9 width=5in}
 
 The load combination falls within the interaction envelope of the voided shaft foundation. This means the voided shaft concept is feasible and can safely support a real-world transmission line structure, further validating the concept.
-
-# Structural Capacity Testing (TODO)
 
 # Cost Comparison (TODO)
 
@@ -286,7 +336,7 @@ The concept of using a hollow or "voided" drilled shaft foundation seems to be f
 
 $a$ = depth of rectangular (Whitney) stress block, in.
 
-$a_c$ =
+$\alpha_c$ = coefficient defining the relative contribution of concrete strength to nominal wall shear strength = $6 - 2.5M_u / (V_u D)$.
 
 $A_b$ = area of individual bar, $\text{in.}^2$.
 
