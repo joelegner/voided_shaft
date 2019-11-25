@@ -12,31 +12,29 @@ Mass concrete carries with it the risk one or both of two of a deleterious pheno
 
 ## Differential Temperature Limits
 
-Presently, most state agencies limit the differential temperature limit in curing concrete to 35$^\circ$F or 40$^\circ$F (FDOT 2018). This means that the core to edge temperature should not exceed this limit or risk of thermally induced tensile stresses will exceed the minimal tensile strength of concrete. Similar to compressive strength, the tensile strength is also proportionally lower in early age concrete when the highest differential temperatures exist. This limit makes no distinction between large or small concrete elements, but is more of a concern in larger elements where higher core and differential temperatures are known to exist. Unfortunately, recent studies have shown the edge of a drilled shaft cast in soils can exhibit a temperature gradient on the order of 4$^\circ$F to 5$^\circ$F/in. Therefore a typical 6in cover of even a small or moderately sized shaft can have a 30$^\circ$F differential and the cage to core temperature can easily exceed the remaining allowable temperature range of 5$^\circ$F to 10$^\circ$F.
+Presently, most state agencies limit the _differential_ temperature limit in curing concrete to 35$^\circ$F or 40$^\circ$F (FDOT 2018). This means that the core to edge temperature should not exceed this limit or there will be a risk that thermally induced tensile stresses will exceed the tensile strength -- which is minimal -- of the concrete. Similar to compressive strength, the tensile strength is also proportionally lower in early age concrete when the highest differential temperatures exist. This limit makes no distinction between large or small concrete elements, but is more of a concern in larger elements where higher core and differential temperatures are known to exist. Unfortunately, recent studies have shown the edge of a drilled shaft cast in soils can exhibit a temperature gradient on the order of 4$^\circ$F to 5$^\circ$F/in. Therefore a typical 6in cover of even a small or moderately sized shaft can have a 30$^\circ$F differential and the cage to core temperature can easily exceed the remaining allowable temperature range of 5$^\circ$F to 10$^\circ$F.
 
 ## Delayed Ettringite Formation (DEF)
 
-Ettringite is a mineral that normally forms in the early stages of concrete hydration due to the addition of gypsum or other calcium sulfate sources. The benefits of ettringite include improved strength, reduction of drying shrinkage and to to prevent flash setting. However, when high curing temperatures exist, ettringite formation is delayed or skipped altogether. This makes the concrete less durable and unable to protect the steel from chloride diffusion. When the temperature finally falls below a threshold level, and if moisture is present, the ettringite begins to form (delayed occurrence hence DEF) in an expansive reaction. This causes tensile stresses that crack the hardened concrete. The curing threshold temperature is still a matter of debate. Values range from about 160$^\circ$F (Mindess and Young) to 180$^\circ$F (FDOT).
+Ettringite is a mineral that normally forms in the early stages of concrete hydration due to the addition of gypsum or other calcium sulfate sources. The benefits of ettringite include improved strength, reduction of drying shrinkage, and prevention of flash setting. However, when high curing temperatures exist, ettringite formation is delayed or skipped altogether. This makes the concrete less durable and unable to protect the steel from chloride diffusion where exposed to saltwater. When the temperature finally falls below a threshold level, and if moisture is present, the ettringite begins to form (delayed occurrence hence DEF) in an expansive reaction. This causes tensile stresses that crack the hardened concrete. The curing threshold temperature is still a matter of debate. Values range from about 160$^\circ$F (Mindess and Young 2002) to 180$^\circ$F (FDOT 2018).
 
 In the power industry, it is typical to cast large diameter shafts with high early strength concrete that produce high core and differential temperatures. This is done to minimize project durations and cost. Figure @fig:1 shows a shaft that exhibited severe cracking from one or both of the concerns above.
 
 ![Drilled shaft likely damaged by thermal induced cracking or DEF (Author's Photo)](./images/cracked-shaft.jpg){#fig:1 width=3.5in }
 
-The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections, specifying mix designs that develop lower heat of hydration, and batching concrete using ice. Reducing the cross-section works by reducing the amount of concrete producing heat. Lower heat mixes can use lower cement contents or use replacement cementitious materials. Replacement materials still develop the same approximate amount of energy, but over a longer timeframe allowing the surrounding soils to dissipate the energy and minimize temperature rise. Use of ice water reduces the starting temperature which both slows the chemical reactions and reduces the peak temperature by the temperature offset caused by the ice.
+The traditional methods of mitigating the effects of mass concrete temperatures include reducing cross-sections, specifying mix designs that develop lower heat of hydration, and batching concrete using ice. Reducing the cross-section works by reducing the amount of concrete producing heat. Lower heat mixes can use lower cement contents or use replacement cementitious materials. Replacement materials still develop approximately the same amount of energy, but over a longer timeframe, allowing the surrounding soils to dissipate the energy and minimize temperature rise. Use of ice in the mix water reduces the starting temperature which both slows the chemical reactions and reduces the peak temperature by the temperature offset caused by the ice.
 
-Since transmission line structure drilled shaft diameter size is usually dictated by either geotechnical or anchor bolt edge distance requirements, reducing the cross-section is rarely an option. The low heat of hydration techniques are also problematic, because methods that delay curing also extend the length of the project, delaying the in-service date and increasing project costs. It would be better to find a way to construct large drilled shafts using conventional concrete without running the risk of DEF.
+Since transmission line structure drilled shaft section size (diameter) is usually dictated by either geotechnical or anchor bolt edge distance requirements, reducing the cross-section is rarely an option. The low heat of hydration techniques are also problematic, because methods that delay curing also extend the length of the project, delaying the in-service date and increasing project costs. It would be better to find a way to construct large drilled shafts using conventional concrete without running the risk of DEF.
 
 ## Voided Shafts for Temperature Control
 
-Johnson and Mullins (2007) devised a mitigation concept they termed "voided shaft" which is to cast a continuous void through the centerline of the pier. This reduces the overall quantity of heat-producing concrete and provides a second surface by which to dissipate heat from the shaft into the environment. Their 3D numerical modeling showed in theory that the method is capable of keeping temperatures below the threshold for DEF concern. Preliminary structural analysis showed that moment capacity would not be reduced significantly. Although axial capacity would be significantly reduced, this is not generally a concern for transmission line structure foundations. Additionally Johnson and Mullins showed that a voided shaft even has the potential to reduce costs.
+Johnson and Mullins (2007) devised a mitigation concept they termed "voided shaft" which is to cast a continuous void through the centerline of the pier. This reduces the overall quantity of heat-producing concrete and provides a second surface through which to dissipate heat from the shaft into the environment. Their 3D numerical modeling showed in theory that the method is capable of keeping temperatures below the threshold for DEF concern. Preliminary structural analysis showed that moment capacity would not be reduced significantly. Although axial capacity would be significantly reduced, this is not generally a concern for transmission line structure foundations. Additionally Johnson and Mullins showed that a voided shaft even has the potential to reduce costs.
 
 To further investigate the voided shaft idea, FDOT sponsored a demonstration shaft, 9 feet in diameter with a 4-foot diameter central void (Mullins, Johnson, and Winters 2018). It used an FDOT Class IV concrete mixture ($f'_c = 4000\text{ psi}$) and was reinforced with 36-#9 bars and #5 hoops. The demonstration shaft was successfully constructed and was found to reduce the peak concrete temperature below the threshold for DEF or differential temperatures.
 
-We will next look closer at structural design considerations for the voided shaft concept.
-
 # Structural Design
 
-There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. We will therefore adopt the ACI 318 code for concrete design. References to ACI 318 hereafter are to the ACI 318-14 code specifically.
+There is no unified code for transmission structure foundation design. Kandaris and Davidow (2015) polled practicing engineers and found that 89 percent use the ACI 318 code for concrete design, four times as many as use the next code. We will therefore adopt the ACI 318 code for concrete design. References to ACI 318 hereafter are to the ACI 318-14 code specifically (ACI 2014).
 
 ## Code Review
 
@@ -48,9 +46,9 @@ ACI 318 Section 1.4.6 and Section 13.1.2 exclude drilled shafts -- called "drill
 
 Chapter 13 of the code gives foundation design requirements. However, detailed requirements for drilled shafts are not given. Refer to Section 13.4.3.
 
-Chapter 14 of the ACI 318 code deals with plain concrete. Section 14.1.2 specifically excludes drilled shafts and refers the user to the general building code. In some states, including Florida, transmission line structures are excluded from the building code requirements, leaving us with no code for the design of such foundations.
+Chapter 14 deals with plain concrete. Section 14.1.2 specifically excludes drilled shafts and refers the user to the general building code. In some states, including Florida, transmission line structures are excluded from the building code requirements, leaving us with no code for the design of such foundations.
 
-ACI 336.3-93 is outdated but recommends using the ACI 318 code for concrete design for drilled shafts, in contradiction to the ACI 318 code itself. It also recommends that ACI 318.1, which was previously a parallel code for plain concrete, be used for the design of piers with sufficient lateral resistance of soil provided, again in contradiction to the ACI 318 code.
+ACI 336.3-93 is outdated but recommends using the ACI 318 code for concrete design for drilled shafts, in contradiction to the ACI 318 code itself (ACI 1993; ACI 2014). It also recommends that ACI 318.1, which was previously a parallel code for plain concrete, be used for the design of piers with sufficient lateral resistance of soil provided, again in contradiction to the ACI 318 code.
 
 ## Confinement
 
@@ -68,15 +66,15 @@ The Johnson and Mullins test shaft employed an inner permanent casing. Such a ca
 
 ## Structural Design Overview
 
-Structural design of transmission line foundation piers requires consideration of (1) axial and flexural strength and (2) shear and torsion. Capacity reduction factors are given in ACI Table 21.2.1. For combined flexure and axial load the capacity reduction factor ranges between 0.65 and 0.90 depending on whether the section is compression-controlled or tension-controlled. For shear and torsion, $\phi = 0.75$.
+Structural design of transmission line foundation piers requires consideration of (1) axial and flexural strength and (2) shear and torsion. Capacity reduction factors are given in ACI 318 Table 21.2.1. For combined flexure and axial load the capacity reduction factor ranges between 0.65 and 0.90 depending on whether the section is compression-controlled or tension-controlled. For shear and torsion, $\phi = 0.75$.
 
 ## Axial and Flexural
 
 Flexure is the primary loading that needs to be resisted by transmission line structure drilled shaft foundations. Even though $P_u$ is likely to be small compared to $M_u$, ACI 318 Section 10.4.2.1 requires that the designer consider $P_u$ and $M_u$ simultaneously for each load combination. The standard design method is to prepare an interaction diagram as depicted in ACI 318 Figure R10.4.2.1 and plot each load combination point ($M_u$, $P_u$) on the diagram. If all points fall inside the boundary, the column meets code requirements for axial load and flexure.
 
-Minimum steel is required for the column. Minimum reinforcement for columns is specified in ACI 318 Section 10.6.1.1 as 1% of the gross area of the member: $A_{s,min} = 0.01A_g$. However, because the proportions of a drilled shaft are governed by either the geotechnical soil requirements or anchor bolt circle minimum edge distance requirements, ACI 318 Section 10.3.1.2 allows us to use one-half the gross cross-sectional area for minimum steel calculations. Therefore minimum steel is:
+Minimum steel is required for the shaft. Minimum reinforcement for columns is specified in ACI 318 Section 10.6.1.1 as 1% of the gross area of the member: $A_{s,min} = 0.01A_g$. However, because the proportions of a drilled shaft are governed by either the geotechnical soil requirements or anchor bolt circle minimum edge distance requirements, ACI 318 Section 10.3.1.2 allows us to use one-half the gross cross-sectional area for minimum steel calculations. Therefore minimum steel is:
 
-$$A_{s,min} = 0.005 A_g$$
+$$A_{s,min} = 0.01 \dfrac{A_g}{2} = 0.005 A_g$$
 
 Where:
 
@@ -90,9 +88,9 @@ For combined axial and flexure $\phi$ depends on whether the section is classifi
 
 Strength is checked using an interaction diagram, sometimes referred to as a "P-M Diagram." Such a diagram is calculated by varying the strain distribution across the section, holding $\epsilon_c=0.003$. The value of $\phi$ is determined at every point on the diagram by categorizing the point as being compression-controlled, tension-controlled, or the transition region between the two. CRSI (2008) provides examples of such calculations. A computer program written in the Python programming language was used to compute P-M diagrams for this paper. The program was validated against the manual example on pages 4-5 to 4-7 of the 2008 CRSI Handbook. The interaction diagram showing the validation is given in Figure @fig:3.
 
-![Validation of Python Program Using CRSI 2008 Example on p. 4-7](./images/python-validation.png){#fig:3 width=5in }
+![Validation of Python Program Using CRSI 2008 Example on p. 4-7](./images/python-validation.png){#fig:3 width=5.5in }
 
-The longitudinal bars in a drilled shaft with internal casing are confined against buckling into the void (Han, Yoon, and Kang 2010). The longitudinal bars in the compression zone of column section will therefore contribute to the strength.
+Assuming that the longitudinal bars in a drilled shaft with internal casing are confined against buckling into the void (Han, Yoon, and Kang 2010), the longitudinal bars in the compression zone of column section will contribute to the section capacity.
 
 ## Composite Behavior
 
@@ -132,7 +130,11 @@ AISC provides other requirements for encased composite shapes:
 {% set Pno2 = fy*As + 0.85*fc*Ag %}
 {% set ratio = Pno1/Pno2 %}
 
-Little research has been done on encasing round circular steel sections in concrete. The AISC specification and commentary discusses encased open shapes like wide flanges and filled closed shapes like round and rectangular HSS shapes. The potential benefit for adding shear studs to the proposed voided shaft would be to increase the axial load capacity and flexural capacity. Assuming we provide a casing that is 1% of the composite member, the potential benefit of including shear studs can be calculated if we also assume $f'_c = 4000\text{ psi}$, $f_y = 60000\text{ psi}$, and $f_{yc} = 36\text{ ksi}$. Let us consider $D$ = {{D|i}} inches and $D_i$ = {{Di|i}} inches. A 5/8-inch thick internal steel liner has an area of {{Asc|s}}$\text{ in}^2$ which is 1% of the total composite area. Use the $P_{no}$ formula for a rough approximation of the strength increase by incorporating composite action into the design.
+Little research has been done on encasing round circular steel sections in concrete. The AISC specification and commentary discusses encased open shapes like wide flanges and filled closed shapes like round and rectangular HSS shapes. The potential benefit for adding shear studs to the proposed voided shaft would be to increase the axial load capacity and flexural capacity.
+
+Assuming the casing area is 1% of the composite member area, the potential benefit of including shear studs can be calculated if we also assume $f'_c = 4000\text{ psi}$, $f_y = 60000\text{ psi}$, and $f_{yc} = 36\text{ ksi}$. Let us consider $D$ = {{D|i}} inches and $D_i$ = {{Di|i}} inches. A 5/8-inch thick internal steel liner has an area of {{Asc|s}}$\text{ in}^2$ which is 1% of the total composite area. Use the $P_{no}$ formula for a rough approximation of the strength increase by incorporating composite action into the design.
+
+$$A_g = \dfrac{ \pi \left( D^2 - D_i^2 \right)}{4} = \dfrac{ \pi \left( {{D|i}}^2 - {{Di|i}}^2 \right)}{4} = {{Ag|s}}text{ in}$$
 
 $$A_s = 0.004 \left( A_g + A_{sc} \right) = {{As|s}}\text{ in}^2$$
 
@@ -147,15 +149,13 @@ The potential increase in axial capacity using an economical interior liner that
 
 ## Shear
 
-The ACI 318 code does not address the shear capacity of hollow circular sections. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. ACI 371R does not state whether it assumes a two-mat with cross-tie reinforcing bar arrangement. It is assumed that even if this is the assumption, the internal casing will provide sufficient confinement to justify using the ACI 371R shear capacity recommendations.
-
-If we consider the water tower pedestals to be sufficiently similar to the hollow drilled shaft foundations, we can use the equations from ACI 371R to calculate the area of concrete effective in shear, $A_{cv}$, depicted in Figure @fig:4.
+The ACI 318 code does not address the shear capacity of hollow circular sections. ACI 371R-08 (2008) gives shear capacity recommendations for the hollow circular concrete pedestals of concrete water towers. ACI 371R does not state whether it assumes a two-mat with cross-tie reinforcing bar arrangement. It is assumed that even if this is the assumption, the internal casing will provide sufficient confinement to justify using the ACI 371R shear capacity recommendations. If we consider the water tower pedestals to be sufficiently similar to the hollow drilled shaft foundations, we can use the equations from ACI 371R to calculate the area of concrete effective in shear, $A_{cv}$, depicted in Figure @fig:4.
 
 ![Effective Shear Area from ACI 371R](./images/effective-shear-area.png){#fig:4 width=6in }
 
 From Figure @fig:4, noting the symmetry of the 45-degree angles and the symmetry of the donut-shaped section and revising ACI 371R notation to match this paper, $A_{cv}$ simply becomes:
 
-$$A_{cv} = \dfrac{A_g}{4}$$
+$$A_{cv} = \dfrac{A_g}{2}$$
 
 The formula for nominal shear strength from Section 5.2.2.7.6 of ACI 371R is:
 
@@ -163,17 +163,15 @@ $$V_c = \left( \alpha_c \sqrt{f'_c} + \rho_h f_y  \right)A_{cv}$$
 
 Where:
 
-$$\alpha = 6 - \dfrac{2.5M_u}{V_u D}$$
+$$\alpha_c = 6 - \dfrac{2.5M_u}{V_u D}$$
 
 Where $\alpha_c$ is constrained to fall between 2 and 3:
 
 $$2 \leq \alpha_c \leq 3$$
 
-Neglecting the reinforcing ratio of the hoops, $\rho_h = 0$. We can also conservatively take $\alpha_c$ to be the lower limit, $\alpha_c = 2$. Substituting these into the formula for $V_n$ gives:
+Neglecting the reinforcing ratio of the hoops, $\rho_h = 0$. We can also conservatively take $\alpha_c$ to be the lower limit, $\alpha_c = 2$, and $A_{cv} = A_g/2$. Substituting these into the formula for $V_c$ gives:
 
-$$\boxed{V_c = 3.12 \sqrt{f'_c} D \dfrac{\left( D - D_i \right)}{2}}$$
-
-Where $\phi = 0.75$ for shear.
+$$V_c = 2 \sqrt{f'_c} (A_g/2)$$
 
 The code and literature are not clear on what the contribution of the hoop steel would be for a _hollow_ circular section. For a _solid_ section, the contribution is specified in ACI 318 Section 22.5.2.2 with $A_v$ equal to the area of two hoop bars and $d=0.8D$.
 
@@ -181,13 +179,15 @@ $$V_s = \dfrac{A_v f_{yt} d}{s}$$
 
 $$\boxed{V_s = \dfrac{1.6 A_{bt} f_{yt} D}{s} }$$
 
-$$V_n = V_c + V_s$$
+$$\phi V_n = \phi (V_c + V_s)$$
+
+Where $\phi = 0.75$ for shear.
 
 # Numerical Example
 
 To elaborate on the work of Johnson and Mullins (2007) we will look at a numerical example based on the same shaft design that was constructed by FDOT (Mullins, Johnson, and Winters 2018). It is referred to herein as the "FDOT Demonstration Shaft." The shaft dimensions and reinforcement are shown in Figures @fig:5 and @fig:6.
 
-![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-plan.png){#fig:5 width=4in }
+![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-plan.png){#fig:5 width=5in }
 
 ![FDOT Demonstration Shaft Section](./images/voided-shaft-detail-elevation.png){#fig:6 width=5in }
 
@@ -195,6 +195,7 @@ To elaborate on the work of Johnson and Mullins (2007) we will look at a numeric
 
 {% set fc=4000.0 %}
 {% set fy=60000.0 %}
+{% set fyc=36000.0 %}
 {% set D=9.0*12.0 %}
 {% set Di=48.0 %}
 {% set beta1 = 0.85 %}
@@ -209,9 +210,11 @@ To elaborate on the work of Johnson and Mullins (2007) we will look at a numeric
 
 1. Concrete compressive strength, $f'_c = {{fc|s}}$ psi. Therefore, $\beta_1 = 0.85$
 
-1. Steel yield stress, $f_y ={{fy|s}}$ psi.
+1. Reinforcing steel yield stress, $f_y ={{fy|s}}$ psi.
 
-1. Longitudinal bars consist of 36-#9 bars, $A_{st} = 36 \times {{Ab|f3}} = {{Ast|s}}\text{ in}^2$.
+1. Casing steel yield stress, $f_{yc} = {{fyc|s}}$ psi.
+
+1. Longitudinal bars consist of 36-#9 bars, $A_s = 36 \times {{Ab|f3}} = {{Ast|s}}\text{ in}^2$.
 
 1. Ties are #5 at {{s|i}} inches on center.
 
@@ -223,9 +226,7 @@ To elaborate on the work of Johnson and Mullins (2007) we will look at a numeric
 
 1. Hoops confine bars against outward buckling and internal casing confines bars against inward buckling. Longitudinal bars are therefore considered effective in compression.
 
-1. Internal casing does not behave in a composite manner.
-
-1. Structure is in Seismic Design Category A, B, or C. (Seismic is beyond the scope of this paper.)
+1. Structure is in Seismic Design Category A, B, or C. (Seismic design is beyond the scope of this paper.)
 
 1. Headed studs are 3/4-inch diameter in accordance with AWS D1.1. $A_{sa} = 0.44\text{ in}^2$ and $F_{ua} = 65\text{ ksi}$ for ASTM A108 material.
 
@@ -238,16 +239,21 @@ $$A_g = \dfrac{ \pi \left( D^2 - D_i^2 \right) }{4} = \dfrac{ \pi \left( {{D|s}}
 
 The maximum compressive strength for a tied column according to ACI 318 Section 22.4.2:
 {% set Pnmax = 0.80*(0.85*fc*(Ag - Ast) + fy*Ast)/1000.0 %} {% set phiPnmax = 0.65*Pnmax %}
-$$P_{n,max} = 0.80 \left[ 0.85 f'_c \left( A_g - A_{st} \right) + f_y A_{st}    \right]$$
+$$P_{n,max} = 0.80 \left[ 0.85 f'_c \left( A_g - A_s \right) + f_y A_s    \right]$$
 $$P_{n,max} = 0.80 \left[ 0.85 \times {{fc|s}} \left( {{Ag|s}} - {{Ast|s}} \right) + {{fy|s}} \times {{Ast|s}}   \right] /1000 = {{Pnmax|s}}\text{ kips}$$
 $$\phi P_{n,max} = 0.65 \times {{Pnmax|s}} = {{phiPnmax|s}}\text{ kips}$$
 
+Interaction diagram produced by Python computer program is shown in Figure @fig:7.
+
 ## Shear
 
-{% set Vc = 3.12*fc**(0.5)*D*(D- Di)/2.0/1000.0 %}
+{% set Vc = 2*fc**(0.5)*Ag/1000.0 %}
 {% set phiv = 0.75 %}
 
 The concrete shear capacity of the demonstration shaft is:
+
+$$V_c = 2 \sqrt{ {{fc|i}}} ({{Ag|s}}/2) = {{Vc|s}}\text{ kips}$$
+
 $$V_c = 3.12 \sqrt{ {{fc|s}}  } ({{D|s}})\dfrac{({{D|s}} - {{Di|s}})}{2}/1000 = {{Vc|s}}\text{ kips}$$
 
 Shear reinforcement is required by ACI Section 10.6.2.1 when $V_u \geq 0.5 \phi V_c$. The contribution of the hoops can be calculated from ACI 318 Section 22.5.2.2.
@@ -263,21 +269,19 @@ $$V_s = \dfrac{1.6 \times {{Abt|s}} \times {{fyt|s}} \times {{D|s}}}{1000 \times
 
 $$\phi V_n = \phi \left( V_c + V_s \right) = 0.75 \times \left( {{Vc|s}} + {{Vs|s}} \right) = {{phiVn|s}}\text{ kips}$$
 
-Interaction diagram produced by Python computer program is shown in Figure @fig:7.
-
 ![FDOT Demonstration Shaft Interaction Diagram](./images/demo-shaft-interaction.png){#fig:7 width=5in}
 
 ## Composite Behavior
 
-{% set Pu=30.0 %}
+{% set Pu=30000.0 %}
 {% set fyc=36000.0 %}
 {% set Pno=fyc*Asc + fy*As + 0.85*fc*Ag %}
-{% set Vr=Pu*(fyc*Asc/Pno) %}
+{% set Vr=Pu*(fyc*Asc/Pno)/1000 %}
 Calculate the required shear force using $P_u = {{Pu|s}}$ kips.
 
 $$P_{no} = {{fyc|s}} \times {{Asc|s}} + {{fy|s}} \times {{As|s}} + 0.85 \times {{fc|i}} \times {{Ag|s}} = {{Pno|s}}\text{ kips}$$
 
-$$V_r' = {{Pu|s}} \left( {{fyc|s}} \times {{Asc|s}} \right) / {{Pno|s}} = {{Vr|s}} \text{ kips}$$
+$$V_r' = \dfrac{ {{Pu|s}} \left( {{fyc|s}} \times {{Asc|s}} \right)}{ {{Pno|s}}\times 1000} = {{Vr|s}} \text{ kips}$$
 
 {% set Fua = 65.0 %}
 {% set Asa = 0.44 %}
@@ -290,7 +294,7 @@ $$Q_{nv} = {{Fua|s}} \times {{Asa|s}} = {{Qnv|s}}\text{ kips}$$
 Calculate the required number of shear connectors:
 $$n = \dfrac{ {{Vr|s}}}{ {{Qnv|s}}} = {{n|i}}$$
 
-The axial load of $P_u = {{Pu|s}}$ kips is too low relative to the strength of the noncomposite column for it to be worth using composite action.
+The axial load of $P_u = {{Pu|s}}$ pounds is too low relative to the strength of the noncomposite column for it to be worth using composite action.
 
 ## Comparison to Real-World Design
 
@@ -300,7 +304,7 @@ The axial load of $P_u = {{Pu|s}}$ kips is too low relative to the strength of t
 {% set Ast = n*Ab %}
 {% set Ast_increase = 100.0*(Ast - fdot_Ast)/fdot_Ast %}
 
-We will now compare the capacity of the FDOT Demonstration Shaft to a real-world transmission line structure. The subject structure is being constructed by the local regulated electric utility in Apollo Beach, Florida as part of a transmission line project. The structure's anchor bolt cage has a bolt circle diameter of 7 feet. It is shown in Figure @fig:8. The foundation engineer selected a shaft diameter of 9 feet to provide an adequate anchor bolt edge distance. This is coincidentally the same shaft diameter as the FDOT Demonstration Shaft. Reinforcement of the real-world shaft is 30-#11 bars, so $A_{st} = {{n}} \times {{Ab|s}} = {{Ast|s}}\text{ in}^2$ or {{Ast_increase|i}}% greater than the FDOT Demonstration Shaft. The reason is that $A_g$ for the solid shaft exceeds $A_g$ for the voided shaft.
+We will now compare the capacity of the FDOT Demonstration Shaft to a real-world transmission line structure. The subject structure is being constructed by the local regulated electric utility in Apollo Beach, Florida as part of a transmission line project. The structure's anchor bolt cage has a bolt circle diameter of 7 feet. It is shown in Figure @fig:8. The foundation engineer selected a shaft diameter of 9 feet to provide an adequate anchor bolt edge distance. This is coincidentally the same shaft diameter as the FDOT Demonstration Shaft. Reinforcement of the real-world shaft is 30-#11 bars, so $A_s = {{n}} \times {{Ab|s}} = {{Ast|s}}\text{ in}^2$ or {{Ast_increase|i}}% greater than the FDOT Demonstration Shaft. The reason is that $A_g$ for the solid shaft exceeds $A_g$ for the voided shaft.
 
 ![Real-World Anchor Bolt Cage (Author's Photo)](./images/real-world-anchor-bolt-cage.jpg){#fig:8 width=5in}
 
@@ -396,6 +400,8 @@ $n$ = number of items such as longitudinal reinforcing bars.
 
 $P_n$ = nominal axial compressive strength of member, kips.
 
+$P_{n,max}$ = maximum nominal axial compressive strength of member, kips.
+
 $P_{no}$ = nominal axial compressive strength without consideration of length effects, determined by AISC 360-10 Equation I2-4 for encased composite members, kips.
 
 $P_r$ = required axial force applied to composite member, kips.
@@ -420,6 +426,8 @@ $V_s$ = nominal shear strength provided by steel, kips.
 
 $V_u$ = factored shear force at section, kips.
 
+$\alpha_c$ = coefficient for effective shear stress under ACI 371R shear provisions.
+
 $\beta_1$ = factor relating depth of equivalent rectangular compressive stress block to depth of neutral axis.
 
 $\epsilon_c$ = compressive strain in concrete at failure, assumed to be 0.003.
@@ -442,23 +450,19 @@ $\psi$ = factor from ACI 371R-08 effective shear area formula.
 
 American Concrete Institute, _Building Code Requirements for Structural Concrete_, ACI 318-14, 2014.
 
-American Concrete Institute, _Guide to Mass Concrete_, 207.1R-05 (Reapproved 2012), Report of ACI Committee 207, Farmington Hills, MI., 2012.
-
 American Concrete Institute, _Design and Construction of Drilled Piers_, ACI 336-93 (Reapproved 2006), 1993.
 
 American Concrete Institute, _Guide for the Analysis, Design, and Construction of Elevated Concrete and Composite Steel-Concrete Water Storage Tanks_, ACI 371R-08, 2008.
 
 American Institute of Steel Construction, _Specification for Structural Steel Buildings_, AISC 360-10, June 22, 2010.
 
-Concrete Reinforcing Steel Institute, _CRSI Design Handbook_, CRSI, 2008.
+Concrete Reinforcing Steel Institute, _CRSI Design Handbook_, CRSI, 2008, pp. 4-5 through 4-7.
 
 Florida Department of Transportation, _Structures Design Guidelines_, SDG, FDOT, Structures Manual Volume 1, January 2018.
 
 Han, T. H., Yoon, K. Y., & Kang, Y. J., "Compressive strength of circular hollow reinforced concrete confined by an internal steel tube," Construction and Building Materials, V. 24, No. 9, 2010, pp. 1690–1699.
 
 Institute of Electrical and Electronics Engineers, _IEEE Guide for Transmission Structure Foundation Design and Testing_, IEEE Std 691-2001, p. 80.
-
-Jensen, Uffe G ; Hoang, Linh Cao, "Shear Strength of Reinforced Concrete Piers and Piles with Hollow Circular Cross Section", Structural Engineering International, V. 20, No. 3. 2010, pp. 260-267.
 
 Johnson, K. M. and Mullins, G., "Concrete Temperature Control via Voiding Drilled Shafts," _Contemporary Issues in Deep Foundations_, ASCE Geo Institute, GSP, V. I, No. 158, 2007, pp. 1-12.
 
