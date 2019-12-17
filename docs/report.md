@@ -330,7 +330,15 @@ To check combined axial load and flexure in accordance with ACI 318 Section 10.4
 
 The load combination falls within the interaction envelope of the voided shaft foundation. This means the voided shaft concept is feasible and can safely support a real-world transmission line structure, further validating the concept.
 
-# Cost Comparison (TODO)
+# Cost Comparison
+
+A cost estimate was prepared by a drilled shaft company based in Clearwater Florida for the following two options:
+
+1. **Option 1:** Solid shaft with cross-section similar to Figures @fig:5 and @fig:6 but without the internal casing.
+
+1. **Option 2:** Voided shaft per Figures @fig:5 and @fig:6.
+
+The total installed cost for the solid shaft was estimated at $30,000.  The voided shaft saves approximately $2,000 in concrete, but the internal liner adds $6,000.
 
 # Conclusions
 
